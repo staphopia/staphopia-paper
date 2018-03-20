@@ -1,0 +1,95 @@
+---
+title: "Results Section: Public Genetic Diversity"
+output:
+  pdf_document: default
+---
+```{r}
+library(staphopia)
+library(ggplot2)
+library(reshape2)
+USE_DEV = TRUE
+```
+
+
+
+## Aggregating Data For Public Samples
+First we'll get all publicly available *S. aureus* samples.
+
+```{r}
+ps <- get_public_samples()
+```
+
+We will also get information pertaining to sequence types by year.
+```{r}
+sequence_types <- get_st_by_year()
+
+```
+
+We now have `r toString(nrow(ps))` samples to work with. Next we will acquire
+metadata, sequencing stats and assembly stats associated with each sample.
+
+## Visualizing Metrics
+The following sections will be plots to visualize relationships in the data.
+
+### Unique Sequence Types By Year
+```{r fig.width=12, fig.asp=0.4}
+title <- substitute(paste("Unique sequence types per year represented in publicly available sequenced ",
+                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
+                    list(x=format(max(sequence_types$overall), big.mark=',', scientific=FALSE),
+                         min_year=min(sequence_types$year),
+                         max_year=max(sequence_types$year)
+))
+p <- ggplot(data=sequence_types, aes(x=year, y=unique)) +
+    xlab("Year") +
+    ylab("Unique Sequence Types") +
+    ggtitle(title) +
+    geom_bar(stat='identity') +
+    geom_text(aes(label=unique), vjust = -0.5) +
+    scale_x_continuous(breaks = round(seq(min(sequence_types$year), max(sequence_types$year), by = 1),1)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### Novel Sequence Types By Year
+```{r fig.width=12, fig.asp=0.4}
+title <- substitute(paste("Novel sequence types by year represented in publicly available sequenced ",
+                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
+                    list(x=format(max(sequence_types$overall), big.mark=',', scientific=FALSE),
+                         min_year=min(sequence_types$year),
+                         max_year=max(sequence_types$year)
+))
+p <- ggplot(data=sequence_types, aes(x=year, y=novel)) +
+    xlab("Year") +
+    ylab("Novel Sequence Types") +
+    ggtitle(title) +
+    geom_bar(stat='identity') +
+    geom_text(aes(label=novel), vjust = -0.5) +
+    scale_x_continuous(breaks = round(seq(min(sequence_types$year), max(sequence_types$year), by = 1),1)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### Overall Novel Sequence Types By Year
+```{r fig.width=12, fig.asp=0.4}
+title <- substitute(paste("Cumulative novel sequence types represented in publicly available sequenced ",
+                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
+                    list(x=format(max(sequence_types$overall), big.mark=',', scientific=FALSE),
+                         min_year=min(submissions$year),
+                         max_year=max(submissions$year)
+))
+p <- ggplot(data=sequence_types, aes(x=year, y=overall_novel)) +
+    xlab("Year") +
+    ylab("Cumulative Novel Sequence Types") +
+    ggtitle(title) +
+    geom_bar(stat='identity') +
+    geom_text(aes(label=overall_novel), vjust = -0.5) +
+    scale_x_continuous(breaks = round(seq(min(sequence_types$year), max(sequence_types$year), by = 1),1)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
