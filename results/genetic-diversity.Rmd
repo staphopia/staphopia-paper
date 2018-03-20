@@ -7,9 +7,11 @@ output:
 library(staphopia)
 library(ggplot2)
 library(reshape2)
+library(scales)
 USE_DEV = TRUE
 ```
 
+In this section we will look into genetic diversity that has been sequenced in *Staphylococcus aureus*. In order to do so, we'll use variant counts, cgMLST and MLST as measures of diversity.
 
 
 ## Aggregating Data For Public Samples
@@ -19,30 +21,147 @@ First we'll get all publicly available *S. aureus* samples.
 ps <- get_public_samples()
 ```
 
-We will also get information pertaining to sequence types by year.
-```{r}
-sequence_types <- get_st_by_year()
+## Variation From *S. aureus* N315
+In Staphopia all samples had variants (SNPs and InDels) called using *S. aureus* N315 as the reference genome. In this section we'll visualize the total number of variants each sample has. This will give us an idea of the sequenced genitic diversity with respect to N315.
 
+### Gather Variant Counts
+We will use `get_variant_counts()` to get the variant counts for each sample. We will also order the counts by the total.
+
+```{r}
+variant_counts <- get_variant_counts(ps$sample_id)
+variant_counts <- variant_counts[order(total),]
 ```
 
-We now have `r toString(nrow(ps))` samples to work with. Next we will acquire
-metadata, sequencing stats and assembly stats associated with each sample.
+### Summary of Variant Counts
+#### Total Variants (SNPs and InDels)
+```{r}
+summary(variant_counts$total)
+```
 
-## Visualizing Metrics
+#### SNPs
+```{r}
+summary(variant_counts$snp_count)
+```
+
+#### InDels
+```{r}
+summary(variant_counts$indel_count)
+```
+
+### Visualizing Variant Counts
+#### Total Variants (SNPs and InDels)
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=variant_counts, aes(x=seq(1,nrow(variant_counts)), y=total)) +
+    xlab("Total Samples") +
+    ylab("Total Variants (SNPs and InDels)") +
+    geom_bar(stat='identity') +
+    scale_x_continuous(breaks = seq(0, nrow(variant_counts), by = 5000)) +
+    scale_y_continuous(breaks = seq(0, max(variant_counts$total), by=10000), labels = scales::comma) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### SNPs Only
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=variant_counts, aes(x=seq(1,nrow(variant_counts)), y=snp_count)) +
+    xlab("Total Samples") +
+    ylab("Total SNPs") +
+    geom_bar(stat='identity') +
+    scale_x_continuous(breaks = seq(0, nrow(variant_counts), by = 5000)) +
+    scale_y_continuous(breaks = seq(0, max(variant_counts$snp_count), by=10000), labels = scales::comma) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### InDels Only
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=variant_counts, aes(x=seq(1,nrow(variant_counts)), y=indel_count)) +
+    xlab("Total Samples") +
+    ylab("Total InDels") +
+    geom_bar(stat='identity') +
+    scale_x_continuous(breaks = seq(0, nrow(variant_counts), by = 5000)) +
+    scale_y_continuous(breaks = seq(0, max(variant_counts$indel_count), by=500), labels = scales::comma) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+
+
+## MLST
+Next we will will use the MLST information has a measure of genitic diversity. In this case we are interested in the total number of unique sequence types sequenced. We'll use *get_st_by_year()* to get some basic stats about how many STs have been sequenced. We will also use *get_top_sequence_types()* to get each ST represented in the database and the total number of samples with each ST. (*Note: 5000 is just an arbitrarly large number to retreive all STs*)
+```{r}
+sequence_types <- get_st_by_year()
+top_st <- get_top_sequence_types(5000)
+colnames(sequence_types)
+```
+
+This gives us 38 columns for each year. These columns are:
+
+1. year: The year.
+2. unique: The Number of unique STs for a given year.
+3. novel: Number of STs not sequenced previously.
+4. assigned: Samples which a ST was determined.
+5. assigned_agree: Samples in which each program that called an ST agreed in ST.
+6. assigned_disagree: Samples in which programs did not each call the same ST.
+7. unassigned: Samples which a ST was not determined.
+8. unassigned_agree: Each program was unable to assign an ST.
+9. unassigned_disagree: Samples in which no ST was determined, but each program does not agree
+10. predicted_novel: Samples with a match to each Loci, but allele pattern does not exist.
+11. all: Samples with an ST determined with agreement between each program.
+12. partial: Samples with an ST determined with agreement between two programs.
+13: ariba_blast: Samples with an ST determined with agreement between Ariba and BLAST.
+14. mentalist_blast: Samples with an ST determined with agreement between MentaLiST and BLAST.
+15. mentalist_ariba: Samples with an ST determined with agreement between MentaLiST and Ariba.
+16. single: Samples with an ST determined by only a single program.
+17. ariba: Samples with an ST determined by only Ariba.
+18. mentalist: Samples with an ST determined by only MentaLiST.
+19. blast: Samples with an ST determined by only BLAST.
+20. count: Total number of samples in a given year.
+21-38: overall_*X*: The cumulative totals of previous years for column *x*
+
+### Summary of MLST Diversity
+#### Assignment Breakdown
+```{r}
+t(sequence_types[sequence_types$year == max(sequence_types$year),21:38])
+```
+
+#### Top STs
+```{r}
+top_st[1:10,]
+```
+
+This gives us 4 columns for each ST, in descending order based on the *count* column. In other words the most represented STs are seen first. These columns are:
+
+1. st: The sequence type.
+2. count: The number of samples with given ST.
+3. percent: The percent of samples represented by given ST.
+4. overall: The percent of samples represented by given ST and previous STs.
+
+##### How many unique STs represented?
+```{r}
+nrow(top_st[top_st$st > 0,])
+```
+
+##### How many STs represented by a single sample?
+```{r}
+nrow(top_st[top_st$count == 1, ])
+```
+
+
+###  Visualizing MLST Diversity
 The following sections will be plots to visualize relationships in the data.
 
-### Unique Sequence Types By Year
+#### Unique Sequence Types By Year
 ```{r fig.width=12, fig.asp=0.4}
-title <- substitute(paste("Unique sequence types per year represented in publicly available sequenced ",
-                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
-                    list(x=format(max(sequence_types$overall), big.mark=',', scientific=FALSE),
-                         min_year=min(sequence_types$year),
-                         max_year=max(sequence_types$year)
-))
 p <- ggplot(data=sequence_types, aes(x=year, y=unique)) +
     xlab("Year") +
     ylab("Unique Sequence Types") +
-    ggtitle(title) +
     geom_bar(stat='identity') +
     geom_text(aes(label=unique), vjust = -0.5) +
     scale_x_continuous(breaks = round(seq(min(sequence_types$year), max(sequence_types$year), by = 1),1)) +
@@ -54,16 +173,9 @@ p
 
 #### Novel Sequence Types By Year
 ```{r fig.width=12, fig.asp=0.4}
-title <- substitute(paste("Novel sequence types by year represented in publicly available sequenced ",
-                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
-                    list(x=format(max(sequence_types$overall), big.mark=',', scientific=FALSE),
-                         min_year=min(sequence_types$year),
-                         max_year=max(sequence_types$year)
-))
 p <- ggplot(data=sequence_types, aes(x=year, y=novel)) +
     xlab("Year") +
     ylab("Novel Sequence Types") +
-    ggtitle(title) +
     geom_bar(stat='identity') +
     geom_text(aes(label=novel), vjust = -0.5) +
     scale_x_continuous(breaks = round(seq(min(sequence_types$year), max(sequence_types$year), by = 1),1)) +
@@ -75,16 +187,9 @@ p
 
 #### Overall Novel Sequence Types By Year
 ```{r fig.width=12, fig.asp=0.4}
-title <- substitute(paste("Cumulative novel sequence types represented in publicly available sequenced ",
-                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
-                    list(x=format(max(sequence_types$overall), big.mark=',', scientific=FALSE),
-                         min_year=min(submissions$year),
-                         max_year=max(submissions$year)
-))
 p <- ggplot(data=sequence_types, aes(x=year, y=overall_novel)) +
     xlab("Year") +
     ylab("Cumulative Novel Sequence Types") +
-    ggtitle(title) +
     geom_bar(stat='identity') +
     geom_text(aes(label=overall_novel), vjust = -0.5) +
     scale_x_continuous(breaks = round(seq(min(sequence_types$year), max(sequence_types$year), by = 1),1)) +
@@ -92,4 +197,73 @@ p <- ggplot(data=sequence_types, aes(x=year, y=overall_novel)) +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"))
 p
+```
+
+
+#### Top 10 Sequence Types
+```{r fig.width=12, fig.asp=0.45}
+p <- ggplot(data=top_st[1:10,], aes(x=reorder(st, -count), y=count)) +
+    xlab("Sequence Type") +
+    ylab("Total Represented Samples") +
+    geom_bar(stat="identity") +
+    geom_text(aes(label=count), vjust = -0.5) + 
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### Total Allele Matches For Unassigned Samples
+```{r fig.width=12, fig.asp=0.45}
+allele_matches <- get_mlst_allele_matches(ps[ps$st == 0,]$sample_id)
+df <- as.data.frame(table(allele_matches[allele_matches$matches < 7,]$matches))
+colnames(df) <- c("matches", "count")
+
+p <- ggplot(data=df, aes(x=matches, y=count)) +
+    xlab("Matched Alleles") +
+    ylab("Total Samples") +
+    geom_bar(stat="identity") +
+    geom_text(aes(label=count), vjust = -0.5) + 
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+## cgMLST Patterns
+Finally, we'll look at cgMLST as a measure of genetic diversity. We will use the *get_cgmlst()* function to get the cgMLST results for each Sample. This function might take a little while to retrieve all teh results.
+```{r}
+cgmlst <- get_publis_cgmlst_patterns()
+cgmlst$percent <- cgmlst$count / sum(cgmlst$total_samples)
+cgmlst
+```
+
+This gives us two columns:
+
+1. samples_in_pattern: The number of samples with a given cgMLST pattern.
+2. count: The number patterns with a given number of samples.
+3. total_samples: Number of samples represented by a row (samples_in_pattern * count)
+4. percent: Percent of samples represented
+
+For example, if samples_in_pattern is 100 and the count is 2. That means there are **2** (count=2) cgMLST patterns that are shared by **100 samples** (samples_in_count=100) each, representing a total of **200 samples** (count * samples_in_count).
+
+### Total Number of Distinct cgMLST Patterns
+```{r}
+sum(cgmlst$count)
+```
+
+### How many shared cgMLST patterns?
+```{r}
+sum(cgmlst[cgmlst$samples_in_pattern > 1, ]$count)
+```
+
+### How many samples share a cgMLST pattern?
+```{r}
+sum(cgmlst[cgmlst$samples_in_pattern > 1, ]$total_samples)
+```
+
+### How many samples have a unique cgMLST pattern?
+```{r}
+cgmlst$percent <- cgmlst$count / sum(cgmlst$total_samples)
+cgmlst[cgmlst$samples_in_pattern == 1, ]
 ```
