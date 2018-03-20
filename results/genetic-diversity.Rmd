@@ -233,7 +233,7 @@ p
 ## cgMLST Patterns
 Finally, we'll look at cgMLST as a measure of genetic diversity. We will use the *get_cgmlst()* function to get the cgMLST results for each Sample. This function might take a little while to retrieve all teh results.
 ```{r}
-cgmlst <- get_publis_cgmlst_patterns()
+cgmlst <- get_public_cgmlst_patterns()
 cgmlst$percent <- cgmlst$count / sum(cgmlst$total_samples)
 cgmlst
 ```
