@@ -68,16 +68,9 @@ The following sections will be plots to visualize relationships in the data.
 ### By Year Plots
 #### Submissions Per Year
 ```{r fig.width=12, fig.asp=0.4}
-title <- substitute(paste("Per year total of publicly available sequenced ",
-                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
-                    list(x=format(max(submissions$overall), big.mark=',', scientific=FALSE),
-                         min_year=min(submissions$year),
-                         max_year=max(submissions$year)
-))
 p <- ggplot(data=submissions, aes(x=year, y=count)) +
     xlab("Year") +
-    ylab("Total Submitted Samples Per Year") +
-    ggtitle(title) +
+    ylab("Count") +
     geom_bar(stat='identity') +
     geom_text(aes(label=count), vjust = -0.5) +
     scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
@@ -88,17 +81,10 @@ p
 ```
 
 #### Overall Submissions
-```{r fig.width=12, fig.asp=0.4}
-title <- substitute(paste("Cumulative total of publicly available sequenced ",
-                          italic('S. aureus')," samples (N = ", x,") between ", min_year, " and ", max_year, "."),
-                    list(x=format(max(submissions$overall), big.mark=',', scientific=FALSE),
-                         min_year=min(submissions$year),
-                         max_year=max(submissions$year)
-))
+```{r Figure 1, fig.asp=0.4, fig.width=12}
 p <- ggplot(data=submissions, aes(x=year, y=overall)) +
     xlab("Year") +
-    ylab("Cumulative Submitted Samples") +
-    ggtitle(title) +
+    ylab("Cumulative Count") +
     geom_bar(stat='identity') +
     geom_text(aes(label=overall), vjust = -0.5) +
     scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
@@ -106,31 +92,22 @@ p <- ggplot(data=submissions, aes(x=year, y=overall)) +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"))
 p
+
+# Output plot to PDF and PNG
+staphopia::write_plot(p, paste0(getwd(), '/images/figure-x-submissions-per-year'))
 ```
 
 #### Submission Ranks
-```{r fig.width=12, fig.asp=0.5}
+```{r Figure BSG, fig.width=12, fig.asp=0.5}
 melted <- melt(ranks, id=c('year'),
                measure.vars = c('bronze', 'silver', 'gold'))
 melted$title <- ifelse(melted$variable == 'gold', 'Gold', 
                        ifelse(melted$variable == 'silver', 'Silver', 'Bronze'))
 melted$rank <- ifelse(melted$variable == 'gold', 3, 
                       ifelse(melted$variable == 'silver', 2, 1))
-
-title <- substitute(paste("Sequencing ranks (Bronze = ", b, ", Silver = ", s,
-                          ", Gold = ", g, ") of publicly available ",
-                          italic('S. aureus')," samples between ", min_year,
-                          " and ", max_year, "."), list(
-    b=format(max(ranks$overall_bronze), big.mark=',', scientific=FALSE),
-    s=format(max(ranks$overall_silver), big.mark=',', scientific=FALSE),
-    g=format(max(ranks$overall_gold), big.mark=',', scientific=FALSE),
-    min_year=min(ranks$year),
-    max_year=max(ranks$year)
-))
 p <- ggplot(data=melted, aes(x=year, y=value, fill=title, group=rank, label=title)) +
     xlab("Year") +
-    ylab("Sequencing Rank Per Year") +
-    ggtitle(title) +
+    ylab("Count") +
     geom_bar(stat='identity', position='dodge') +
     geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
     scale_fill_manual(values=c("#CD7F32", "#D4AF37", "#C0C0C0")) +
@@ -142,6 +119,9 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title, group=rank, label=titl
     
 
 p
+
+# Output plot to PDF and PNG
+staphopia::write_plot(p, paste0(getwd(), '/images/figure-x-rank-per-year'))
 ```
 
 #### Assembly Size
@@ -319,4 +299,10 @@ p
 p <- ggplot(metrics[metrics$rank.x == 1,], aes(x = coverage, y = read_mean)) +
     geom_point()
 p
+```
+
+
+## Session Info
+```{r}
+sessionInfo()
 ```

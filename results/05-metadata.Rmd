@@ -91,7 +91,7 @@ melted <- melt(submissions, id=c('year'),
 melted$title <- ifelse(melted$variable == 'published', 'Published', 'Unpublished')
 p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
     xlab("Year") +
-    ylab("Published and Unpublished Samples Per Year") +
+    ylab("Count") +
     geom_bar(stat='identity', position='dodge') +
     geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
     scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
@@ -106,13 +106,13 @@ p
 ```
 
 #### Overall Published vs Unpublished Submissions
-```{r fig.width=12, fig.asp=0.5}
+```{r Figure Pubs, fig.width=12, fig.asp=0.5}
 melted <- melt(submissions, id=c('year'),
                measure.vars = c('overall_published', 'overall_unpublished'))
 melted$title <- ifelse(melted$variable == 'overall_published', 'Published', 'Unpublished')
 p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
     xlab("Year") +
-    ylab("Cumulative Published and Unpublished Samples Per Year") +
+    ylab("Cumulative Count") +
     geom_bar(stat='identity', position='dodge') +
     geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
     scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
@@ -124,6 +124,9 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
     
 
 p
+
+# Output plot to PDF and PNG
+staphopia::write_plot(p, paste0(getwd(), '/images/figure-x-published-per-year'))
 ```
 
 
@@ -167,10 +170,11 @@ paste0(has_source," (", has_source / nrow(metrics) * 100, " %)")
 
 #### Isolation Sources
 ```{r}
-as.data.frame(table(metrics[metrics$isolation_source != "",]$isolation_source))
+df <- as.data.frame(table(substr(tolower(metrics[metrics$isolation_source != "",]$isolation_source), 1, 50)))
+df[order(-df$Freq),]
 ```
 
 #### Number of Isolation Sources
 ```{r}
-nrow(as.data.frame(table(metrics[metrics$isolation_source != "",]$isolation_source)))
+nrow(as.data.frame(table(tolower(metrics[metrics$isolation_source != "",]$isolation_source))))
 ```
