@@ -1,0 +1,179 @@
+---
+title: "Results Section: Public Metadata"
+output:
+  pdf_document: default
+---
+```{r}
+library(staphopia)
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+```
+
+## Aggregating Data For Public Samples
+First we'll get all publicly available *S. aureus* samples.
+
+```{r}
+ps <- get_public_samples()
+```
+
+We now have `r toString(nrow(ps))` samples to work with. Next we will acquire
+metadata associated with each sample.
+
+We will also get information pertaining to submissions by year and how any publication links were made.
+```{r}
+submissions <- get_submission_by_year()
+publication_links <- get_publication_links()
+```
+
+Next we are going to pull down any metadata associated with the public samples.
+```{r}
+metrics <- merge(
+    ps, 
+    get_metadata(ps$sample_id),
+    by='sample_id'
+)
+```
+
+We are now going to add two columns `rank_name` and `year`.
+```{r}
+metrics$year <- sapply(
+    metrics$first_public,
+    function(x) {
+        strsplit(x, "-")[[1]][1]
+    }
+)
+
+metrics$rank_name <- ifelse(
+    metrics$rank.x == 3,
+    'Gold',
+    ifelse(
+        metrics$rank.x == 2,
+        'Silver',
+        'Bronze'
+    )
+)
+```
+
+### Publication Information
+
+#### Summary
+Here are details looking at total submissions and their publication status.
+```{r}
+t(submissions[submissions$year == max(submissions$year),])
+```
+
+Here is information on how publication links were made.
+```{r}
+t(publication_links)
+```
+
+There are 6 rows and their names are as follows:
+
+1. elink: Number samples linked to a PubMed ID identified from eLink
+2. text: Number samples linked to a PubMed ID identified from text mining (not through eLink)
+3. elink_pmid: Number of PubMed IDs identified from eLink
+4. text_pmid: Number of PubMed IDs identified from text mining (not through eLink)
+5. total: Total number of samples associated with a PubMed ID
+6. total_pmid: Total number of PubMed IDs associated with published samples
+
+##### Percent of Samples Published
+```{r}
+stats <- submissions[submissions$year == max(submissions$year),]
+stats$overall_published / stats$overall * 100
+```
+
+#### Published vs Unpublished Submissions Per Year
+```{r fig.width=12, fig.asp=0.5}
+melted <- melt(submissions, id=c('year'),
+               measure.vars = c('published', 'unpublished'))
+melted$title <- ifelse(melted$variable == 'published', 'Published', 'Unpublished')
+p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
+    xlab("Year") +
+    ylab("Count") +
+    geom_bar(stat='identity', position='dodge') +
+    geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
+    scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
+    scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"),
+          legend.title = element_blank())
+    
+
+p
+```
+
+#### Overall Published vs Unpublished Submissions
+```{r Figure 8 Pubs, fig.width=12, fig.asp=0.5}
+melted <- melt(submissions, id=c('year'),
+               measure.vars = c('overall_published', 'overall_unpublished'))
+melted$title <- ifelse(melted$variable == 'overall_published', 'Published', 'Unpublished')
+p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
+    xlab("Year") +
+    ylab("Cumulative Count") +
+    geom_bar(stat='identity', position='dodge') +
+    geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
+    scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
+    scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"),
+          legend.title = element_blank())
+    
+
+p
+
+# Output plot to PDF and PNG
+staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-08-published-per-year'))
+```
+
+
+### Metadata Information
+
+#### Number of Samples With A Collection Date
+```{r}
+has_collection_date <- nrow(metrics[metrics$collection_date != "",])
+paste0(has_collection_date," (", has_collection_date / nrow(metrics) * 100, " %)")
+```
+
+#### Number of Samples With A Location Information
+```{r}
+has_location <- nrow(metrics[metrics$location != "unknown/missing",])
+paste0(has_location," (", has_location / nrow(metrics) * 100, " %)")
+```
+
+#### Number of Locations
+```{r}
+nrow(as.data.frame(table(metrics[metrics$location != "unknown/missing",]$location)))
+```
+
+#### Countries
+```{r}
+country_data <- as.data.frame(table(metrics[(metrics$country != "unknown/missing" ) & (metrics$country != ""),]$country))
+colnames(country_data) <- c("Country", "total")
+country_data <- arrange(country_data, desc(total))
+country_data
+```
+
+#### Number of Countries
+```{r}
+paste0(nrow(country_data), " countries, represented by ", sum(country_data$total), " samples")
+```
+
+#### Number of Samples With Isolation Source
+```{r}
+has_source <- nrow(metrics[metrics$isolation_source != "",])
+paste0(has_source," (", has_source / nrow(metrics) * 100, " %)")
+```
+
+#### Isolation Sources
+```{r}
+df <- as.data.frame(table(substr(tolower(metrics[metrics$isolation_source != "",]$isolation_source), 1, 50)))
+df[order(-df$Freq),]
+```
+
+#### Number of Isolation Sources
+```{r}
+nrow(as.data.frame(table(tolower(metrics[metrics$isolation_source != "",]$isolation_source))))
+```
