@@ -333,6 +333,7 @@ Example:
 
 ```{r}
 mec <- merge(mec, data.frame(sample_id=top_type$sample_id, total=top_type$total), by='sample_id')
+mec <- merge(mec, data.frame(sample_id=top_type$sample_id, mec_total=top_type$meca_total), by='sample_id')
 table(mec[mec$total >= 0.5,]$primer_mec)
 ```
 ```{r}
@@ -345,6 +346,11 @@ table(mec[mec$total >= 0.5,]$ariba_mec)
 
 ```{r}
 table(mec[mec$total >= 0.5,]$ariba_relaxed_mec)
+```
+
+SCCmec cassettes with 50% coverage but 0% in *mec* region.
+```{r}
+table(mec[mec$total >= 0.5 & mec$mec_total == 0,]$ariba_mec)
 ```
 
 #### *mecA* Presence By ST
