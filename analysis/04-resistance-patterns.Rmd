@@ -38,13 +38,15 @@ table(sccmec_primer$meca)
 ```{r}
 sccmec_counts <- as.data.frame(colSums(sccmec_primer[,2:11]))
 colnames(sccmec_counts) <- c('Total')
-sccmec_counts <- data.frame(Type=rownames(sccmec_counts), Total=sccmec_counts$Total)
+sccmec_counts <- data.frame(Type=rownames(sccmec_counts),
+                            Total=sccmec_counts$Total)
 sccmec_counts
 ```
 
 ### Relaxed (Hamming Distance)
 ```{r}
-sccmec_type_hd <- get_sccmec_type(ps$sample_id, hamming = TRUE)
+sccmec_type_hd <- get_sccmec_type(ps$sample_id, 
+                                  hamming = TRUE)
 table(sccmec_type_hd$meca)
 ```
 
@@ -54,7 +56,8 @@ table(sccmec_type_hd$meca)
 sccmec_proteins <- get_sccmec_protein_hits(ps$sample_id)
 max_score <- group_by(sccmec_proteins,target) %>%
              summarise(maxscore = max(bitscore))
-sccmec_proteins <- merge(sccmec_proteins, max_score, by='target')
+sccmec_proteins <- merge(sccmec_proteins, max_score,
+                         by='target')
 ```
 
 ```{r}
@@ -63,7 +66,8 @@ table(sccmec_proteins[sccmec_proteins$BSR >0.95,]$target)
 ```
 
 ```{r fig.width=12, fig.asp=0.4}
-p <- ggplot(data=sccmec_proteins[sccmec_proteins$BSR > 0.95], aes(x=target)) +
+p <- ggplot(data=sccmec_proteins[sccmec_proteins$BSR > 0.95],
+            aes(x=target)) +
     ylab("Count") +
     xlab("SCCmec Target") +
     geom_bar() +
@@ -77,7 +81,9 @@ p
 ```{r fig.width=12, fig.asp=0.4}
 a <- sccmec_proteins[sccmec_proteins$target =='mecA',]
 sccmec_proteins_mec <- data.frame(sample_id=a$sample_id, BSR=a$BSR)
-sccmec_proteins_mec$mec <- ifelse(sccmec_proteins_mec$BSR >= 0.95, TRUE, FALSE)
+sccmec_proteins_mec$mec <- ifelse(
+    sccmec_proteins_mec$BSR >= 0.95, TRUE, FALSE
+)
 p <- ggplot(data=sccmec_proteins_mec, aes(x=BSR)) +
     xlab("Blast Score Ratio") +
     ylab("Count") +
@@ -92,7 +98,9 @@ p
 ```{r fig.width=12, fig.asp=0.4}
 a <- hist(sccmec_proteins_mec$BSR, plot=FALSE)
 meca_bsr <- data.frame(
-    region=sapply(1:length(a$counts), function(x){paste0(a$breaks[x], " - ",a$breaks[x+1])}), 
+    region=sapply(1:length(a$counts), function(x){
+        paste0(a$breaks[x], " - ",a$breaks[x+1])
+    }), 
     count=a$counts
 )
 meca_bsr
@@ -112,7 +120,9 @@ table(ariba$mec)
 ### Relaxed
 These results allow for partial matches to a SCCmec related cluster.
 ```{r}
-ariba_relaxed <- get_sccmec_ariba(ps$sample_id, resistance_report = TRUE, include_all=TRUE)
+ariba_relaxed <- get_sccmec_ariba(ps$sample_id,
+                                  resistance_report = TRUE,
+                                  include_all=TRUE)
 ```
 ```{r}
 table(ariba_relaxed$mec)
@@ -125,7 +135,9 @@ sccmec_coverage <- get_sccmec_cassette_coverages(ps$sample_id)
 
 ### Group By Most Covered SCCmec Type
 ```{r Table Top SCCmec Type Mapping}
-top_type <- sccmec_coverage %>% group_by(sample_id) %>% slice(which.max(total))
+top_type <- sccmec_coverage %>% group_by(sample_id) %>% slice(
+    which.max(total)
+)
 table(top_type[top_type$total > 0.5,]$cassette)
 ```
 
@@ -135,7 +147,9 @@ length(top_type[top_type$total > 0.5,]$cassette)
 
 ### Group By Most Covered *mec* Region
 ```{r}
-top_mec <- sccmec_coverage %>% group_by(sample_id) %>% slice(which.max(meca_total))
+top_mec <- sccmec_coverage %>% group_by(sample_id) %>% slice(
+    which.max(meca_total)
+)
 table(top_mec[top_type$total > 0.5,]$cassette)
 ```
 
@@ -300,14 +314,27 @@ mec <- merge(
     all=TRUE
 )
 mec[is.na(mec$protein_mec),]$protein_mec <- FALSE
-mec <- merge(mec, data.frame(sample_id=sccmec_primer$sample_id, primer_mec=sccmec_primer$meca), by='sample_id', all=TRUE)
-mec <- merge(mec, data.frame(sample_id=ariba$sample_id, ariba_mec=ariba$mec), by='sample_id', all=TRUE)
-mec <- merge(mec, data.frame(sample_id=ariba_relaxed$sample_id, ariba_relaxed_mec=ariba_relaxed$mec), by='sample_id', all=TRUE)
+mec <- merge(mec, data.frame(
+    sample_id=sccmec_primer$sample_id, 
+    primer_mec=sccmec_primer$meca
+), by='sample_id', all=TRUE)
+mec <- merge(mec, data.frame(
+    sample_id=ariba$sample_id, 
+    ariba_mec=ariba$mec
+), by='sample_id', all=TRUE)
+mec <- merge(mec, data.frame(
+    sample_id=ariba_relaxed$sample_id, 
+    ariba_relaxed_mec=ariba_relaxed$mec
+), by='sample_id', all=TRUE)
 mec$agreement <- paste0(
     ifelse(mec$protein_mec, 1, 0),
     ifelse(mec$primer_mec, 1, 0),
-    ifelse(is.na(mec$ariba_mec), '-', ifelse(mec$ariba_mec, 1, 0)),
-    ifelse(is.na(mec$ariba_relaxed_mec), '-', ifelse(mec$ariba_relaxed_mec, 1, 0))
+    ifelse(is.na(mec$ariba_mec), '-', ifelse(
+        mec$ariba_mec, 1, 0
+    )),
+    ifelse(is.na(mec$ariba_relaxed_mec), '-', ifelse(
+        mec$ariba_relaxed_mec, 1, 0
+    ))
 )
 table(mec$agreement)
 ```
@@ -332,8 +359,14 @@ Example:
 * 1111 : All approaches agree that **mec** is predicted
 
 ```{r}
-mec <- merge(mec, data.frame(sample_id=top_type$sample_id, total=top_type$total), by='sample_id')
-mec <- merge(mec, data.frame(sample_id=top_type$sample_id, mec_total=top_type$meca_total), by='sample_id')
+mec <- merge(mec, data.frame(
+    sample_id=top_type$sample_id, 
+    total=top_type$total
+), by='sample_id')
+mec <- merge(mec, data.frame(
+    sample_id=top_type$sample_id, 
+    mec_total=top_type$meca_total
+), by='sample_id')
 table(mec[mec$total >= 0.5,]$primer_mec)
 ```
 ```{r}
@@ -355,10 +388,18 @@ table(mec[mec$total >= 0.5 & mec$mec_total == 0,]$ariba_mec)
 
 #### *mecA* Presence By ST
 ```{r}
-meca_groups <- merge(data.frame(sample_id=ps$sample_id, st=ps$st, rank=ps$rank),
-                     ariba,
-                     by='sample_id')
-meca_groups$status <- ifelse(meca_groups$mec == TRUE, 'MRSA', 'MSSA')
+meca_groups <- merge(
+    data.frame(
+        sample_id=ps$sample_id, 
+        st=ps$st, 
+        rank=ps$rank
+    ),
+    ariba,
+    by='sample_id'
+)
+meca_groups$status <- ifelse(
+    meca_groups$mec == TRUE, 'MRSA', 'MSSA'
+)
 meca_by_st <- plyr::count(meca_groups, c('st', 'status'))
 head(meca_by_st)
 ```
@@ -374,11 +415,13 @@ Now we are ready to plot out the distribution of MRSA and MSSA predictions by se
 
 ```{r Figure 6 MRSA TopST, fig.width=12, fig.asp=0.4}
 top_st_meca <- merge(top_st, meca_by_st, by='st')
-p <- ggplot(data=top_st_meca, aes(x=reorder(st, -count), y=freq, fill = status)) +
+p <- ggplot(data=top_st_meca, aes(x=reorder(st, -count), y=freq,
+                                  fill = status)) +
     xlab("Sequence Type") +
     ylab("Count") +
     geom_bar(stat="identity", position = "dodge") +
-    geom_text(aes(label=freq), vjust = -0.5, position = position_dodge(.9)) + 
+    geom_text(aes(label=freq), vjust = -0.5,
+              position = position_dodge(.9)) + 
     scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
     theme_bw() +
     theme(axis.text=element_text(size=12),
@@ -394,37 +437,55 @@ staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-06-mrsa-top-10-sequ
 
 #### Resistance Classes With A Match
 ```{r}
-resistance_report <- get_resistance_results(ps$sample_id, resistance_report=TRUE)
-df <- as.data.frame(colSums(resistance_report[,2:ncol(resistance_report)]))
+resistance_report <- get_resistance_results(ps$sample_id,
+                                            resistance_report=TRUE)
+df <- as.data.frame(colSums(
+    resistance_report[,2:ncol(resistance_report)]
+))
 colnames(df) <- c('total')
-resistance_report_counts <- data.frame(class=rownames(df), total=df$total)
+resistance_report_counts <- data.frame(
+    class=rownames(df),
+    total=df$total
+)
 resistance_report_counts[resistance_report_counts$total > 0,]
 ```
 
 #### Resistance Classes Without A Match
 ```{r}
-data.frame(class=as.character(resistance_report_counts[resistance_report_counts$total == 0,]$class))
+data.frame(class=as.character(
+    resistance_report_counts[resistance_report_counts$total == 0,]$class
+))
 ```
 
 ```{r}
-cluster_report <- get_resistance_results(ps$sample_id, cluster_report=TRUE)
-df <- as.data.frame(colSums(cluster_report[,2:ncol(cluster_report)]))
+cluster_report <- get_resistance_results(ps$sample_id,
+                                         cluster_report=TRUE)
+df <- as.data.frame(colSums(
+    cluster_report[,2:ncol(cluster_report)]
+))
 colnames(df) <- c('total')
-cluster_report_counts <- data.frame(cluster=rownames(df), total=df$total)
+cluster_report_counts <- data.frame(
+    cluster=rownames(df),
+    total=df$total
+)
 cluster_report_counts[cluster_report_counts$total > 0,]
 ```
 
 #### Resistance Clusters Without A Match
 ```{r}
-data.frame(class=as.character(cluster_report_counts[cluster_report_counts$total == 0,]$cluster))
+data.frame(class=as.character(
+    cluster_report_counts[cluster_report_counts$total == 0,]$cluster
+))
 ```
 
 
 #### Group
 ```{r}
-resistance_groups <- merge(data.frame(sample_id=ps$sample_id, st=ps$st, rank=ps$rank),
-                           resistance_report,
-                           by='sample_id')
+resistance_groups <- merge(
+    data.frame(sample_id=ps$sample_id, st=ps$st, rank=ps$rank),
+    resistance_report,
+    by='sample_id'
+)
 ```
 
 #### By ST
@@ -442,14 +503,19 @@ plot_by_st <- function(group, top_st, column) {
           )
         )
     )
-    by_st$status <- ifelse(by_st[,make.names(column)] == TRUE, 'Resistant', 'Susceptible')
+    by_st$status <- ifelse(
+        by_st[,make.names(column)] == TRUE, 'Resistant', 'Susceptible'
+    )
     top_st_resistance <- merge(top_st, by_st, by='st')
-    p <- ggplot(data=top_st_resistance, aes(x=reorder(st, -count), y=freq, fill = status)) +
+    p <- ggplot(data=top_st_resistance, aes(x=reorder(st, -count),
+                                            y=freq, fill = status)) +
         xlab("Sequence Type") +
         ylab(paste0("Count")) +
         geom_bar(stat="identity", position = "dodge") +
-        geom_text(aes(label=freq), vjust = -0.5, position = position_dodge(.9)) + 
-        scale_fill_manual(values=c("#2ca25f", "#5ab4ac"), name = column) +
+        geom_text(aes(label=freq), vjust = -0.5,
+                  position = position_dodge(.9)) + 
+        scale_fill_manual(values=c("#2ca25f", "#5ab4ac"),
+                          name = column) +
         theme_bw() +
         theme(axis.text=element_text(size=12),
               axis.title=element_text(size=14,face="bold"),
@@ -463,17 +529,13 @@ plot_by_st <- function(group, top_st, column) {
 top_st <- get_top_sequence_types()
 plots <- list()
 i <- 1
-for (column in sort(as.character(resistance_report_counts[resistance_report_counts$total > 0,]$class))) {
+for (column in sort(as.character(
+        resistance_report_counts[resistance_report_counts$total > 0,]$class
+    ))) {
     p <- plot_by_st(resistance_groups, top_st, column)
     print(column)
     print(p)
     if (column == 'Fosfomycin' | column == 'Aminoglycosides' | column == 'MLS') {
-        # Output plot to PDF and PNG
-        #staphopia::write_plot(
-        #    p, 
-        #    paste0(getwd(),
-        #    '/images/figure-x-', tolower(column),'-top-10-sequence-types'
-        #))
         plots[[i]] <- p
         i <- i + 1
     } 

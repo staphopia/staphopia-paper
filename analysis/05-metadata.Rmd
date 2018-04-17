@@ -94,7 +94,9 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
     geom_bar(stat='identity', position='dodge') +
     geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
     scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
-    scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
+    scale_x_continuous(breaks = round(
+        seq(min(submissions$year), max(submissions$year), by = 1), 1
+    )) +
     theme_bw() +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"),
@@ -115,7 +117,9 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
     geom_bar(stat='identity', position='dodge') +
     geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
     scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
-    scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
+    scale_x_continuous(breaks = round(
+        seq(min(submissions$year), max(submissions$year), by = 1), 1
+    )) +
     theme_bw() +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"),
@@ -150,7 +154,9 @@ nrow(as.data.frame(table(metrics[metrics$location != "unknown/missing",]$locatio
 
 #### Countries
 ```{r}
-country_data <- as.data.frame(table(metrics[(metrics$country != "unknown/missing" ) & (metrics$country != ""),]$country))
+country_data <- as.data.frame(table(
+    metrics[(metrics$country != "unknown/missing" ) & (metrics$country != ""),]$country
+))
 colnames(country_data) <- c("Country", "total")
 country_data <- arrange(country_data, desc(total))
 country_data
@@ -169,11 +175,20 @@ paste0(has_source," (", has_source / nrow(metrics) * 100, " %)")
 
 #### Isolation Sources
 ```{r}
-df <- as.data.frame(table(substr(tolower(metrics[metrics$isolation_source != "",]$isolation_source), 1, 50)))
+df <- as.data.frame(table(substr(tolower(
+    metrics[metrics$isolation_source != "",]$isolation_source), 1, 50
+)))
 df[order(-df$Freq),]
 ```
 
 #### Number of Isolation Sources
 ```{r}
-nrow(as.data.frame(table(tolower(metrics[metrics$isolation_source != "",]$isolation_source))))
+nrow(as.data.frame(table(tolower(
+    metrics[metrics$isolation_source != "",]$isolation_source
+))))
+```
+
+# Session Info
+```{r}
+sessionInfo()
 ```

@@ -72,7 +72,9 @@ p <- ggplot(data=submissions, aes(x=year, y=count)) +
     ylab("Count") +
     geom_bar(stat='identity') +
     geom_text(aes(label=count), vjust = -0.5) +
-    scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
+    scale_x_continuous(breaks = round(
+        seq(min(submissions$year), max(submissions$year), by = 1),1
+    )) +
     theme_bw() +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"))
@@ -86,7 +88,9 @@ p <- ggplot(data=submissions, aes(x=year, y=overall)) +
     ylab("Cumulative Count") +
     geom_bar(stat='identity') +
     geom_text(aes(label=overall), vjust = -0.5) +
-    scale_x_continuous(breaks = round(seq(min(submissions$year), max(submissions$year), by = 1),1)) +
+    scale_x_continuous(breaks = round(
+        seq(min(submissions$year), max(submissions$year), by = 1), 1
+    )) +
     theme_bw() +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"))
@@ -110,7 +114,9 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title, group=rank, label=titl
     geom_bar(stat='identity', position='dodge') +
     geom_text(aes(label=value), vjust = -0.5, position = position_dodge(.9)) +
     scale_fill_manual(values=c("#CD7F32", "#D4AF37", "#C0C0C0")) +
-    scale_x_continuous(breaks = round(seq(min(ranks$year), max(ranks$year), by = 1),1)) +
+    scale_x_continuous(breaks = round(
+        seq(min(ranks$year), max(ranks$year), by = 1), 1
+    )) +
     theme_bw() +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"),
