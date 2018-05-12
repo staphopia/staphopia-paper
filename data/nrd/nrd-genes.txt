@@ -1,0 +1,879 @@
+annotation_id	locus_tag	protein_id	gene	product
+2	SA_RS00145	WP_001290433.1	.	chromosomal replication initiator protein DnaA
+4	SA_RS00155	WP_000249647.1	.	RNA-binding protein
+5	SA_RS00160	WP_000775113.1	.	DNA recombination protein RecF
+6	SA_RS00165	WP_000255578.1	gyrB	DNA gyrase subunit B
+13	SA_RS00200	WP_000186490.1	.	homoserine O-acetyltransferase
+14	SA_RS00205	WP_001800884.1	.	membrane protein
+18	SA_RS00225	WP_000095328.1	.	adenylosuccinate synthetase
+21	SA_RS00240	WP_000101976.1	.	DNA-binding response regulator
+22	SA_RS00245	WP_000871607.1	.	PAS domain-containing sensor histidine kinase
+23	SA_RS00250	WP_001060140.1	.	hypothetical protein
+25	SA_RS00260	WP_000088649.1	.	metallo-hydrolase
+110	SA_RS00685	WP_000173891.1	.	L-lactate permease
+112	SA_RS00695	WP_000876756.1	.	transcriptional regulator
+114	SA_RS00705	WP_000924990.1	.	siderophore ABC transporter permease
+115	SA_RS00710	WP_001045111.1	.	iron ABC transporter substrate-binding protein
+122	SA_RS00745	WP_001186804.1	.	siderophore biosynthesis protein SbnG
+134	SA_RS00805	WP_000874681.1	.	Superoxide dismutase [Mn/Fe] 2
+140	SA_RS00835	WP_000667269.1	.	2-deoxyribose-5-phosphate aldolase
+141	SA_RS00840	WP_000197806.1	.	phosphopentomutase
+165	SA_RS00960	WP_000779504.1	.	UDP-N-acetyl-D-mannosamine dehydrogenase
+166	SA_RS00965	WP_000723436.1	.	UDP-N-acetyl glucosamine 2-epimerase
+167	SA_RS00970	WP_000480603.1	.	monooxygenase IsdI
+169	SA_RS00980	WP_000290397.1	.	aldehyde dehydrogenase
+173	SA_RS01000	WP_000171919.1	.	hypothetical protein
+183	SA_RS01050	WP_000166931.1	.	hypothetical protein
+222	SA_RS01245	WP_000690405.1	.	xylose isomerase
+223	SA_RS01250	WP_000603755.1	.	membrane protein
+224	SA_RS01255	WP_001008722.1	.	antiporter
+228	SA_RS01275	WP_000894660.1	.	formate acetyltransferase
+229	SA_RS01280	WP_000911657.1	.	pyruvate formate-lyase-activating enzyme
+230	SA_RS01285	WP_000822589.1	.	glycerophosphoryl diester phosphodiesterase
+243	SA_RS01350	WP_000773989.1	.	membrane protein
+246	SA_RS01365	WP_001031880.1	.	L-lactate dehydrogenase
+252	SA_RS01395	WP_000531476.1	.	PTS sugar transporter subunit IIA
+261	SA_RS01440	WP_000594817.1	.	CDP-glycerol--glycerophosphate glycerophosphotransferase
+262	SA_RS01445	WP_000872486.1	.	2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase
+263	SA_RS01450	WP_000610204.1	.	ribitol-5-phosphate dehydrogenase
+268	SA_RS01475	WP_000645452.1	.	DNA-binding response regulator
+269	SA_RS01480	WP_001792906.1	.	antiholin-like protein LrgA
+270	SA_RS01485	WP_000607067.1	.	antiholin-like protein LrgB
+277	SA_RS01520	WP_000182746.1	.	ribokinase
+278	SA_RS01525	WP_000747873.1	.	D-ribose pyranase
+327	SA_RS01770	WP_000936718.1	.	N-acetylmannosamine-6-phosphate 2-epimerase
+340	SA_RS01835	WP_000699538.1	.	PTS lactose transporter subunit IIB
+350	SA_RS01885	WP_000157630.1	.	membrane protein
+359	SA_RS01930	WP_001246008.1	.	transcriptional regulator
+364	SA_RS01955	WP_001790583.1	.	hypothetical protein
+366	SA_RS01965	WP_000195907.1	.	metal-dependent hydrolase
+368	SA_RS01975	WP_000077317.1	.	bifunctional homocysteine S-methyltransferase/methylenetetrahydrofolate reductase
+370	SA_RS01985	WP_000655692.1	.	cystathionine gamma-synthase
+373	SA_RS02000	WP_000157348.1	.	hypothetical protein
+376	SA_RS02015	WP_001261460.1	.	30S ribosomal protein S6
+377	SA_RS02020	WP_000934799.1	.	single-stranded DNA-binding protein
+384	SA_RS02055	WP_001055897.1	.	transcriptional regulator
+391	SA_RS02090	WP_000930514.1	.	alkyl hydroperoxide reductase subunit F
+392	SA_RS02095	WP_000052781.1	.	alkyl hydroperoxide reductase subunit C
+393	SA_RS02100	WP_001287099.1	.	NADPH-dependent oxidoreductase
+400	SA_RS02135	WP_000421410.1	.	xanthine phosphoribosyltransferase
+402	SA_RS02145	WP_000264071.1	.	IMP dehydrogenase
+445	SA_RS02360	WP_000831496.1	.	hypothetical protein
+446	SA_RS02365	WP_001790022.1	.	membrane protein
+447	SA_RS02370	WP_000565813.1	.	phosphatase
+448	SA_RS02375	WP_001220811.1	.	carboxylesterase
+449	SA_RS02380	WP_000828719.1	.	sodium-dependent transporter
+458	SA_RS02425	WP_000183668.1	.	GNAT family acetyltransferase
+459	SA_RS02430	WP_000994678.1	.	hypothetical protein
+469	SA_RS02480	WP_001167828.1	.	acetyltransferase
+471	SA_RS02490	WP_001213992.1	.	hypothetical protein
+472	SA_RS02495	WP_000559159.1	.	recombination protein RecR
+480	SA_RS02535	WP_001272126.1	.	thymidylate kinase
+483	SA_RS02550	WP_000344334.1	.	DNA polymerase III subunit delta'
+484	SA_RS02555	WP_001134194.1	.	signal peptidase II
+485	SA_RS02560	WP_000375683.1	.	initiation-control protein YabA
+487	SA_RS02570	WP_000377064.1	.	hypothetical protein
+488	SA_RS02575	WP_000279926.1	.	rRNA (cytidine-2'-O-)-methyltransferase
+490	SA_RS02585	WP_001051129.1	.	methionine--tRNA ligase
+491	SA_RS02590	WP_000904312.1	.	hydrolase TatD
+494	SA_RS02605	WP_001126664.1	.	hypothetical protein
+496	SA_RS02615	WP_001269643.1	.	pur operon repressor
+498	SA_RS02625	WP_000868999.1	.	stage V sporulation protein G
+500	SA_RS02635	WP_001252543.1	glmU	bifunctional N-acetylglucosamine-1-phosphate uridyltransferase/glucosamine-1-phosphate acetyltransferase
+501	SA_RS02640	WP_000933774.1	.	ribose-phosphate pyrophosphokinase
+502	SA_RS02645	WP_001791436.1	.	hypothetical protein
+503	SA_RS02650	WP_000157650.1	.	50S ribosomal protein L25/general stress protein Ctc
+504	SA_RS02655	WP_000649791.1	.	peptidyl-tRNA hydrolase
+505	SA_RS02660	WP_000154218.1	.	transcription-repair coupling factor
+506	SA_RS02665	WP_000680740.1	.	stage V sporulation protein B
+508	SA_RS02675	WP_001234988.1	.	hypothetical protein
+509	SA_RS02680	WP_000792417.1	.	cell division protein DIVIC
+510	SA_RS02685	WP_000021445.1	.	RNA-binding protein S1
+511	SA_RS02690	WP_001176709.1	.	tRNA(Ile)-lysidine synthase
+512	SA_RS02695	WP_000551283.1	.	hypoxanthine-guanine phosphoribosyltransferase
+513	SA_RS02700	WP_001167888.1	.	zinc metalloprotease
+515	SA_RS02710	WP_000057594.1	.	cysteine synthase
+517	SA_RS02720	WP_001154302.1	.	dihydroneopterin aldolase
+518	SA_RS02725	WP_000613722.1	.	2-amino-4-hydroxy-6- hydroxymethyldihydropteridine pyrophosphokinase
+520	SA_RS02735	WP_001288202.1	.	lysine--tRNA ligase
+535	SA_RS02810	WP_000034728.1	.	pyridoxal 5'-phosphate synthase subunit PdxS
+538	SA_RS02825	WP_000551762.1	.	transcriptional regulator CtsR
+539	SA_RS02830	WP_000882069.1	.	excinuclease ABC subunit B
+540	SA_RS02835	WP_000149502.1	.	protein arginine kinase
+541	SA_RS02840	WP_000897132.1	.	ATP-dependent Clp protease ATP-binding subunit ClpC
+543	SA_RS02850	WP_001085219.1	.	DNA repair protein RadA
+546	SA_RS02865	WP_000919905.1	.	serine acetyltransferase
+547	SA_RS02870	WP_000631969.1	.	cysteine--tRNA ligase
+548	SA_RS02875	WP_041961197.1	.	ribonuclease III
+549	SA_RS02880	WP_000390332.1	.	23S rRNA (guanosine(2251)-2'-O)-methyltransferase RlmB
+550	SA_RS02885	WP_000664737.1	.	hypothetical protein
+552	SA_RS02895	WP_001074473.1	.	protein translocase subunit SecE
+554	SA_RS02905	WP_001085792.1	.	50S ribosomal protein L11
+555	SA_RS02910	WP_001074622.1	.	50S ribosomal protein L1
+556	SA_RS02915	WP_001273085.1	.	50S ribosomal protein L10
+557	SA_RS02920	WP_001273586.1	rplL	50S ribosomal protein L7/L12
+559	SA_RS02930	WP_000918667.1	.	DNA-directed RNA polymerase subunit beta
+562	SA_RS02945	WP_001142337.1	.	30S ribosomal protein S12
+563	SA_RS02950	WP_001137495.1	.	30S ribosomal protein S7
+564	SA_RS02955	WP_000090315.1	fusA	elongation factor G
+565	SA_RS02960	WP_001040568.1	tuf	elongation factor Tu
+575	SA_RS03010	WP_000180281.1	.	tRNA-specific adenosine deaminase
+576	SA_RS03015	WP_000593361.1	.	haloacid dehalogenase
+584	SA_RS03055	WP_000129068.1	.	bacillithiol biosynthesis deacetylase BshB2
+585	SA_RS03060	WP_000433318.1	.	hypothetical protein
+593	SA_RS03100	WP_001165058.1	.	protein VraC
+595	SA_RS03110	WP_000587958.1	.	protein VraX
+597	SA_RS03120	WP_000455256.1	.	uracil-DNA glycosylase
+600	SA_RS03135	WP_000412514.1	.	amino acid permease
+603	SA_RS03150	WP_000075704.1	.	heme-binding protein
+604	SA_RS03155	WP_000774281.1	eutD	phosphate acetyltransferase
+605	SA_RS03160	WP_000362356.1	.	octanoyl-[GcvH]:protein N-octanoyltransferase
+606	SA_RS03165	WP_000197034.1	.	mevalonate kinase
+607	SA_RS03170	WP_000597327.1	.	diphosphomevalonate decarboxylase
+608	SA_RS03175	WP_000616885.1	.	phosphomevalonate kinase
+609	SA_RS03180	WP_000798967.1	.	hypothetical protein
+611	SA_RS03190	WP_001047238.1	.	transcriptional regulator
+620	SA_RS03235	WP_000477505.1	.	acetyltransferase
+621	SA_RS03240	WP_000180234.1	.	HD domain-containing protein
+622	SA_RS03245	WP_001290992.1	.	hypothetical protein
+625	SA_RS03260	WP_000359086.1	.	hypothetical protein
+626	SA_RS03265	WP_001021144.1	argS	arginine--tRNA ligase
+629	SA_RS03280	WP_001100744.1	.	enterobactin ABC transporter permease
+630	SA_RS03285	WP_000365354.1	.	haloacid dehalogenase
+632	SA_RS03295	WP_000735558.1	.	hypothetical protein
+635	SA_RS03310	WP_001018677.1	.	transcriptional regulator
+645	SA_RS03360	WP_000616642.1	.	cation:proton antiporter
+649	SA_RS03380	WP_000737654.1	.	manganese ABC transporter substrate-binding protein
+650	SA_RS03385	WP_000889252.1	.	membrane protein
+654	SA_RS03405	WP_000215388.1	.	N-acetylmannosaminyltransferase
+655	SA_RS03410	WP_001103231.1	.	teichoic acids export ATP-binding protein TagH
+656	SA_RS03415	WP_001273060.1	.	teichoic acid ABC transporter permease
+658	SA_RS03425	WP_001241182.1	.	glycosyl transferase
+659	SA_RS03430	WP_000832260.1	.	glycerol-3-phosphate cytidylyltransferase
+660	SA_RS03435	WP_000793067.1	.	D-alanyl-D-alanine carboxypeptidase
+662	SA_RS03445	WP_000479279.1	.	nucleoside permease
+663	SA_RS03450	WP_001788321.1	.	hypothetical protein
+664	SA_RS03455	WP_001044662.1	.	membrane protein
+665	SA_RS03460	WP_001080809.1	.	iron-dicitrate ABC transporter ATP-binding protein
+666	SA_RS03465	WP_000184741.1	.	ferrichrome ABC transporter permease
+667	SA_RS03470	WP_000625878.1	.	iron ABC transporter permease
+671	SA_RS03490	WP_001164085.1	.	hypothetical protein
+672	SA_RS03495	WP_000980137.1	.	membrane protein
+673	SA_RS03500	WP_001030772.1	.	lipase LipA
+676	SA_RS03515	WP_000940129.1	.	acetyltransferase
+682	SA_RS03545	WP_000491755.1	.	hypothetical protein
+700	SA_RS03635	WP_000820897.1	.	Rossman fold protein, TIGR00730 family
+701	SA_RS03640	WP_000148826.1	.	hypothetical protein
+703	SA_RS03650	WP_000469894.1	.	undecaprenyl-diphosphatase
+704	SA_RS03655	WP_000737162.1	.	cysteine ABC transporter ATP-binding protein
+705	SA_RS03660	WP_000857598.1	.	cysteine ABC transporter ATP-binding protein
+707	SA_RS03670	WP_000794419.1	.	cobalamin biosynthesis protein CobW
+709	SA_RS03680	WP_000180416.1	.	membrane protein
+716	SA_RS03715	WP_000216725.1	.	hypothetical protein
+718	SA_RS03725	WP_000587338.1	.	DeoR family transcriptional regulator
+719	SA_RS03730	WP_000640737.1	.	1-phosphofructokinase
+722	SA_RS03745	WP_001292242.1	.	N-acetylglucosamine-6-phosphate deacetylase
+723	SA_RS03750	WP_000450257.1	.	hypothetical protein
+729	SA_RS03780	WP_001093562.1	.	hypothetical protein
+730	SA_RS03785	WP_000604990.1	.	membrane protein
+731	SA_RS03790	WP_001062972.1	.	7-cyano-7-deazaguanosine (preQ0) biosynthesis protein QueE
+732	SA_RS03795	WP_000941336.1	.	6-carboxy-5,6,7,8-tetrahydropterin synthase
+733	SA_RS03800	WP_000446724.1	.	7-cyano-7-deazaguanine synthase
+734	SA_RS03805	WP_000604514.1	.	glutamine amidotransferase
+735	SA_RS03810	WP_001217791.1	.	para-aminobenzoate synthetase subunit I
+736	SA_RS03815	WP_001175781.1	.	aminodeoxychorismate lyase
+737	SA_RS03820	WP_001797134.1	.	hypothetical protein
+739	SA_RS03830	WP_000022323.1	.	allophanate hydrolase
+741	SA_RS03840	WP_001791726.1	.	hypothetical protein
+744	SA_RS03855	WP_000589248.1	.	glycine/betaine ABC transporter ATP-binding protein
+755	SA_RS03910	WP_000855514.1	.	ribonucleotide-diphosphate reductase
+762	SA_RS03945	WP_001127269.1	.	hypothetical protein
+763	SA_RS03950	WP_000608433.1	murB	UDP-N-acetylenolpyruvoylglucosamine reductase
+766	SA_RS03965	WP_000985617.1	.	hypothetical protein
+767	SA_RS03970	WP_000866737.1	.	glycerate kinase
+768	SA_RS03975	WP_000795811.1	.	peptidase T
+770	SA_RS03985	WP_001113406.1	.	membrane protein
+771	SA_RS03990	WP_000460983.1	.	membrane protein
+774	SA_RS04005	WP_000686344.1	.	hypothetical protein
+777	SA_RS04020	WP_000617735.1	.	ribosomal subunit interface protein
+784	SA_RS04055	WP_000638419.1	.	hypothetical protein
+787	SA_RS04070	WP_000958224.1	.	HPr kinase/phosphorylase
+791	SA_RS04090	WP_000134963.1	.	thioredoxin reductase
+794	SA_RS04105	WP_001248939.1	.	hypothetical protein
+795	SA_RS04110	WP_000006551.1	.	sporulation regulator WhiA
+797	SA_RS04120	WP_001049165.1	.	ATP-dependent Clp protease proteolytic subunit
+800	SA_RS04135	WP_000654030.1	.	transcriptional regulator
+801	SA_RS04140	WP_000279414.1	.	glyceraldehyde-3-phosphate dehydrogenase
+803	SA_RS04150	WP_001260089.1	tpiA	triose-phosphate isomerase
+804	SA_RS04155	WP_001085507.1	.	2,3-bisphosphoglycerate-independent phosphoglycerate mutase
+805	SA_RS04160	WP_001121760.1	eno	enolase
+806	SA_RS04165	WP_000785252.1	.	membrane protein
+807	SA_RS04170	WP_000556760.1	.	protein-export membrane protein SecG
+823	SA_RS04250	WP_001059082.1	.	cold-shock protein
+828	SA_RS04275	WP_001059690.1	.	membrane protein
+829	SA_RS04280	WP_000145163.1	.	hypothetical protein
+833	SA_RS04300	WP_000569884.1	.	acetyltransferase
+834	SA_RS04305	WP_000974460.1	.	organic hydroperoxide resistance protein-like
+838	SA_RS04325	WP_000589549.1	.	arsenate reductase
+839	SA_RS04330	WP_000290491.1	.	glycine cleavage system protein H
+851	SA_RS04390	WP_001065801.1	.	thiol reductase thioredoxin
+852	SA_RS04395	WP_000571207.1	.	methionine import ATP-binding protein MetN 2
+855	SA_RS04410	WP_000752917.1	.	CsbD family protein
+856	SA_RS04415	WP_001183854.1	.	DUF368 domain-containing protein
+857	SA_RS04420	WP_000168845.1	.	ABC transporter ATP-binding protein
+859	SA_RS04430	WP_000807663.1	.	cysteine desulfurase
+867	SA_RS04470	WP_000608129.1	.	hypothetical protein
+870	SA_RS04485	WP_000201875.1	.	lipoyl synthase
+871	SA_RS04490	WP_000598444.1	.	hypothetical protein
+874	SA_RS04505	WP_000273982.1	.	hypothetical protein
+878	SA_RS04525	WP_000837752.1	.	hypothetical protein
+879	SA_RS04530	WP_000129659.1	.	D-alanine--poly(phosphoribitol) ligase
+880	SA_RS04535	WP_000613541.1	.	D-alanyl-lipoteichoic acid biosynthesis protein DltB
+881	SA_RS04540	WP_000395692.1	.	D-alanine--poly(phosphoribitol) ligase subunit 2
+882	SA_RS04545	WP_000769415.1	.	D-alanyl-lipoteichoic acid biosynthesis protein DltD
+883	SA_RS04550	WP_001141883.1	.	hypothetical protein
+884	SA_RS04555	WP_000401414.1	.	disulfide oxidoreductase
+885	SA_RS04560	WP_000794020.1	.	NADH dehydrogenase
+886	SA_RS04565	WP_001068337.1	.	hypothetical protein
+888	SA_RS04575	WP_000046076.1	.	NADH dehydrogenase
+890	SA_RS04585	WP_000606324.1	.	sodium:proton antiporter
+893	SA_RS04600	WP_000590451.1	.	Na+/H+ antiporter subunit G
+894	SA_RS04605	WP_001016306.1	.	Na+/H+ antiporter subunit F
+895	SA_RS04610	WP_000290674.1	.	Na+/H+ antiporter subunit E
+897	SA_RS04620	WP_000402803.1	.	Na+/H+ antiporter subunit C
+898	SA_RS04625	WP_001081626.1	.	Na+/H+ antiporter subunit B
+899	SA_RS04630	WP_000054612.1	.	Na+/H+ antiporter subunit A
+901	SA_RS04640	WP_000035058.1	.	peptidyl-prolyl cis-trans isomerase
+902	SA_RS04645	WP_001067294.1	.	general stress protein
+905	SA_RS04660	WP_000138487.1	.	NAD-specific glutamate dehydrogenase
+907	SA_RS04670	WP_000066053.1	.	argininosuccinate lyase
+908	SA_RS04675	WP_000660045.1	.	argininosuccinate synthase
+910	SA_RS04685	WP_000007967.1	.	hypothetical protein
+911	SA_RS04690	WP_000758209.1	.	inactive signal peptidase IA
+914	SA_RS04705	WP_000154921.1	.	ATP-dependent helicase/nuclease subunit A
+917	SA_RS04720	WP_001124506.1	.	CoA-disulfide reductase
+927	SA_RS04770	WP_000769694.1	.	MAP domain-containing protein
+928	SA_RS04775	WP_000682089.1	.	hypothetical protein
+929	SA_RS04780	WP_001100526.1	.	3-oxoacyl-ACP synthase III
+943	SA_RS04850	WP_000258003.1	.	regulatory protein Spx
+948	SA_RS04875	WP_000214070.1	.	hypothetical protein
+949	SA_RS04880	WP_000224619.1	.	adenylate cyclase
+951	SA_RS04890	WP_001077683.1	.	GTP pyrophosphokinase
+952	SA_RS04895	WP_001270834.1	ppnK	NAD(+) kinase
+956	SA_RS04915	WP_000933195.1	.	enoyl-ACP reductase
+957	SA_RS04920	WP_000933105.1	.	AI-2E family transporter
+960	SA_RS04935	WP_000600387.1	.	hypothetical protein
+961	SA_RS04940	WP_001154223.1	.	glycolipid permease LtaA
+962	SA_RS04945	WP_000258645.1	.	diacylglycerol beta-glucosyltransferase
+963	SA_RS04950	WP_000340119.1	.	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--L- lysine ligase
+965	SA_RS04960	WP_001049950.1	.	peptide chain release factor 3
+966	SA_RS04965	WP_000928413.1	.	membrane protein
+968	SA_RS04975	WP_000021865.1	.	ATP synthase
+973	SA_RS05000	WP_000876826.1	.	hypothetical protein
+988	SA_RS05075	WP_000070966.1	.	1,4-dihydroxy-2-naphthoate octaprenyltransferase
+992	SA_RS05095	WP_000184945.1	.	1,4-dihydroxy-2-naphthoyl-CoA synthase
+1005	SA_RS05160	WP_000104254.1	.	quinol oxidase subunit 4
+1006	SA_RS05165	WP_000017736.1	.	quinol oxidase subunit 3
+1007	SA_RS05170	WP_001010762.1	.	cytochrome ubiquinol oxidase subunit I
+1008	SA_RS05175	WP_000032836.1	.	quinol oxidase subunit 2
+1012	SA_RS05195	WP_000861572.1	.	phosphoribosylaminoimidazole carboxylase
+1013	SA_RS05200	WP_001010413.1	.	N5-carboxyaminoimidazole ribonucleotide synthase
+1015	SA_RS05210	WP_000848350.1	.	phosphoribosylformylglycinamidine synthase
+1020	SA_RS05235	WP_000238669.1	.	phosphoribosylglycinamide formyltransferase
+1024	SA_RS05255	WP_000921965.1	.	ABC transporter ATP-binding protein
+1025	SA_RS05260	WP_000033477.1	.	thiamine ABC transporter permease
+1029	SA_RS05280	WP_000009069.1	.	hypothetical protein
+1030	SA_RS05285	WP_000685067.1	.	SAM-dependent methyltransferase
+1032	SA_RS05295	WP_000437472.1	.	phosphocarrier protein HPr
+1033	SA_RS05300	WP_000040051.1	.	phosphoenolpyruvate--protein phosphotransferase
+1034	SA_RS05305	WP_001289618.1	.	NrdH-redoxin
+1035	SA_RS05310	WP_000381849.1	.	cytochrome d ubiquinol oxidase subunit I
+1038	SA_RS05325	WP_000811375.1	.	ribonuclease J 1
+1039	SA_RS05330	WP_000257888.1	.	hypothetical protein
+1041	SA_RS05340	WP_000957037.1	.	peptide deformylase
+1042	SA_RS05345	WP_000668336.1	.	cell-wall-binding lipoprotein
+1043	SA_RS05350	WP_000035320.1	.	pyruvate dehydrogenase E1 component subunit alpha
+1044	SA_RS05355	WP_000068176.1	.	pyruvate dehydrogenase E1 component subunit beta
+1046	SA_RS05365	WP_000260117.1	.	dihydrolipoyl dehydrogenase
+1049	SA_RS05380	WP_000433551.1	.	spermidine/putrescine import ATP-binding protein PotA
+1051	SA_RS05390	WP_000872390.1	.	spermidine/putrescine ABC transporter permease
+1055	SA_RS05410	WP_001060842.1	.	divalent metal cation transporter
+1060	SA_RS05435	WP_001250275.1	.	hypothetical protein
+1061	SA_RS05440	WP_000614712.1	.	hypothetical protein
+1062	SA_RS05445	WP_001118417.1	.	hypothetical protein
+1066	SA_RS05465	WP_000031401.1	.	protoheme IX farnesyltransferase
+1067	SA_RS05470	WP_000538766.1	.	membrane protein
+1069	SA_RS05480	WP_000733409.1	.	hypothetical protein
+1072	SA_RS05495	WP_001049150.1	.	hypothetical protein
+1073	SA_RS05500	WP_000814565.1	.	hypothetical protein
+1074	SA_RS05505	WP_001263796.1	.	methyltransferase
+1075	SA_RS05510	WP_000401377.1	coaD	phosphopantetheine adenylyltransferase
+1076	SA_RS05515	WP_000843611.1	.	hypothetical protein
+1078	SA_RS05525	WP_001791487.1	.	hypothetical protein
+1079	SA_RS05530	WP_000290472.1	rpmF	50S ribosomal protein L32
+1083	SA_RS05550	WP_001246685.1	.	hypothetical protein
+1084	SA_RS05555	WP_001220199.1	.	heme uptake system protein IsdE
+1085	SA_RS05560	WP_001548422.1	.	hemin ABC transporter permease
+1086	SA_RS05565	WP_001821618.1	.	SrtB family sortase
+1087	SA_RS05570	WP_000670950.1	.	monooxygenase IsdI
+1089	SA_RS05580	WP_000435374.1	.	RNA methyltransferase
+1090	SA_RS05585	WP_000003566.1	pheS	phenylalanine--tRNA ligase subunit alpha
+1091	SA_RS05590	WP_000908969.1	.	phenylalanine--tRNA ligase subunit beta
+1093	SA_RS05600	WP_000046704.1	.	cell division protein ZapA
+1094	SA_RS05605	WP_000234068.1	.	colicin V production protein CvpA
+1096	SA_RS05615	WP_001249275.1	.	endonuclease MutS2
+1097	SA_RS05620	WP_001018928.1	.	thiol reductase thioredoxin
+1100	SA_RS05635	WP_000079317.1	.	succinate dehydrogenase cytochrome B558
+1101	SA_RS05640	WP_000818278.1	sdhA	succinate dehydrogenase flavoprotein subunit
+1128	SA_RS05775	WP_000149423.1	.	membrane protein
+1137	SA_RS05820	WP_000480800.1	.	division/cell wall cluster transcriptional repressor MraZ
+1138	SA_RS05825	WP_000468384.1	.	ribosomal RNA small subunit methyltransferase H
+1139	SA_RS05830	WP_000257598.1	.	cell division protein FtsL
+1140	SA_RS05835	WP_001118652.1	.	penicillin-binding protein
+1141	SA_RS05840	WP_000578458.1	.	phospho-N-acetylmuramoyl-pentapeptide- transferase
+1142	SA_RS05845	WP_000935991.1	murD	UDP-N-acetylmuramoylalanine--D-glutamate ligase
+1145	SA_RS05860	WP_000888997.1	.	cell division protein FtsZ
+1148	SA_RS05875	WP_001185355.1	.	cell division protein SepF
+1149	SA_RS05880	WP_000354114.1	.	cell division protein
+1155	SA_RS05910	WP_000549207.1	.	lipoprotein signal peptidase
+1156	SA_RS05915	WP_000451294.1	.	hypothetical protein
+1157	SA_RS05920	WP_000003870.1	.	bifunctional protein PyrR
+1159	SA_RS05930	WP_001016166.1	.	aspartate carbamoyltransferase
+1161	SA_RS05940	WP_001190913.1	.	carbamoyl-phosphate synthase small chain
+1162	SA_RS05945	WP_001126259.1	.	carbamoyl-phosphate synthase large chain
+1163	SA_RS05950	WP_000654067.1	.	orotidine 5'-phosphate decarboxylase
+1164	SA_RS05955	WP_001040248.1	.	orotate phosphoribosyltransferase
+1166	SA_RS05965	WP_000354180.1	.	hypothetical protein
+1168	SA_RS05975	WP_000368226.1	.	guanylate kinase
+1170	SA_RS05985	WP_000722165.1	.	phosphopantothenoylcysteine decarboxylase
+1173	SA_RS06000	WP_001198024.1	.	hypothetical protein
+1175	SA_RS06010	WP_000161291.1	.	methionyl-tRNA formyltransferase
+1180	SA_RS06035	WP_000847936.1	.	GTPase
+1181	SA_RS06040	WP_000164332.1	.	ribulose-phosphate 3-epimerase
+1182	SA_RS06045	WP_000547910.1	.	thiamine pyrophosphokinase
+1183	SA_RS06050	WP_000517908.1	.	50S ribosomal protein L28
+1184	SA_RS06055	WP_000171418.1	.	hypothetical protein
+1185	SA_RS06060	WP_000623903.1	.	hypothetical protein
+1186	SA_RS06065	WP_001151509.1	.	ATP-dependent DNA helicase RecG
+1187	SA_RS06070	WP_000768423.1	.	transcription factor FapR
+1190	SA_RS06085	WP_000167269.1	.	beta-ketoacyl-ACP reductase
+1192	SA_RS06095	WP_000426914.1	.	acyl carrier protein
+1193	SA_RS06100	WP_000043237.1	.	ribonuclease 3
+1194	SA_RS06105	WP_000262698.1	.	chromosome segregation protein SMC
+1195	SA_RS06110	WP_000007678.1	.	signal recognition particle-docking protein FtsY
+1196	SA_RS06115	WP_000531320.1	.	DNA-binding protein
+1198	SA_RS06125	WP_000268754.1	rpsP	30S ribosomal protein S16
+1199	SA_RS06130	WP_001261987.1	.	ribosome maturation factor RimM
+1200	SA_RS06135	WP_000687330.1	.	tRNA (guanine-N(1)-)-methyltransferase
+1201	SA_RS06140	WP_000181402.1	.	50S ribosomal protein L19
+1205	SA_RS06160	WP_000176393.1	.	ribonuclease HII
+1206	SA_RS06165	WP_001020801.1	sucC	succinyl-CoA ligase subunit beta
+1207	SA_RS06170	WP_000110253.1	.	succinyl-CoA ligase subunit alpha
+1211	SA_RS06190	WP_000774780.1	.	DNA topoisomerase 1
+1213	SA_RS06200	WP_001015601.1	.	tyrosine recombinase XerC
+1214	SA_RS06205	WP_000072681.1	.	HslU--HslV peptidase proteolytic subunit
+1217	SA_RS06220	WP_031761472.1	.	hypothetical protein
+1219	SA_RS06230	WP_001789890.1	.	hypothetical protein
+1220	SA_RS06235	WP_000201392.1	.	elongation factor Ts
+1221	SA_RS06240	WP_000057330.1	pyrH	UMP kinase
+1222	SA_RS06245	WP_001280006.1	.	ribosome recycling factor
+1223	SA_RS06250	WP_000473699.1	.	isoprenyl transferase
+1224	SA_RS06255	WP_000868413.1	.	phosphatidate cytidylyltransferase
+1226	SA_RS06265	WP_000814094.1	.	proline--tRNA ligase
+1228	SA_RS06275	WP_000036633.1	.	ribosome maturation factor
+1230	SA_RS06285	WP_000727423.1	.	DNA-binding protein
+1231	SA_RS06290	WP_000020853.1	.	50S ribosomal protein L7ae
+1233	SA_RS06300	WP_000097322.1	.	ribosome-binding factor A
+1235	SA_RS06310	WP_000864185.1	.	bifunctional riboflavin kinase/FMN adenylyltransferase
+1236	SA_RS06315	WP_001018328.1	.	30S ribosomal protein S15
+1237	SA_RS06320	WP_000076690.1	.	polyribonucleotide nucleotidyltransferase
+1238	SA_RS06325	WP_000052590.1	.	ribonuclease J 2
+1243	SA_RS06350	WP_000646228.1	.	3-oxoacyl-ACP reductase
+1245	SA_RS06360	WP_000859443.1	.	transcriptional regulator
+1246	SA_RS06365	WP_001025093.1	.	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase
+1247	SA_RS06370	WP_000020347.1	.	competence protein CinA
+1248	SA_RS06375	WP_000368166.1	.	DNA recombination/repair protein RecA
+1249	SA_RS06380	WP_001050913.1	.	ribonuclease Y
+1250	SA_RS06385	WP_000026308.1	.	hypothetical protein
+1251	SA_RS06390	WP_001222105.1	.	metallophosphoesterase
+1252	SA_RS06395	WP_000804320.1	.	2-oxoglutarate ferredoxin oxidoreductase subunit alpha
+1253	SA_RS06400	WP_000190138.1	.	2-oxoacid ferredoxin oxidoreductase subunit beta
+1255	SA_RS06410	WP_001001524.1	.	tRNA (N6-isopentenyl adenosine(37)-C2)-methylthiotransferase MiaB
+1256	SA_RS06415	WP_000282386.1	.	hypothetical protein
+1258	SA_RS06425	WP_000073352.1	.	DNA mismatch repair protein MutS
+1262	SA_RS06445	WP_000417372.1	glpK	glycerol kinase
+1263	SA_RS06450	WP_001218596.1	.	aerobic glycerol-3-phosphate dehydrogenase
+1266	SA_RS06465	WP_000561358.1	.	RNA-binding protein Hfq
+1270	SA_RS06485	WP_031760852.1	.	MerR family transcriptional regulator
+1271	SA_RS06490	WP_001126606.1	.	glutamine synthetase
+1290	SA_RS06585	WP_001027143.1	.	membrane protein
+1291	SA_RS06590	WP_000841351.1	.	thermonuclease
+1293	SA_RS06600	WP_001803470.1	.	hypothetical protein
+1295	SA_RS06610	WP_000735864.1	.	homoserine dehydrogenase
+1296	SA_RS06615	WP_001255461.1	.	threonine synthase
+1299	SA_RS06630	WP_000580201.1	.	hypothetical protein
+1301	SA_RS06640	WP_000389956.1	.	gamma-aminobutyrate permease
+1302	SA_RS06645	WP_000082539.1	.	catalase
+1303	SA_RS06650	WP_001265708.1	.	50S ribosomal protein L33
+1304	SA_RS06655	WP_001085655.1	.	30S ribosomal protein S14
+1306	SA_RS06665	WP_001791425.1	.	hypothetical protein
+1307	SA_RS06670	WP_000380730.1	.	secretion protein
+1308	SA_RS06675	WP_001208755.1	.	LexA repressor
+1309	SA_RS06680	WP_001557339.1	.	membrane protein
+1311	SA_RS06690	WP_000481443.1	.	transketolase
+1312	SA_RS06695	WP_000246909.1	.	hypothetical protein
+1313	SA_RS06700	WP_001789897.1	.	hypothetical protein
+1314	SA_RS06705	WP_000966142.1	.	membrane protein
+1322	SA_RS06745	WP_000972779.1	.	glycerol-3-phosphate acyltransferase
+1323	SA_RS06750	WP_001557340.1	gyrB	DNA topoisomerase IV subunit B
+1324	SA_RS06755	WP_001289562.1	.	DNA topoisomerase 4 subunit A
+1325	SA_RS06760	WP_001791428.1	.	hypothetical protein
+1327	SA_RS06770	WP_000505015.1	.	protein GlcT
+1331	SA_RS06790	WP_001024830.1	.	peptide-methionine (S)-S-oxide reductase
+1333	SA_RS06800	WP_001123276.1	.	tautomerase
+1335	SA_RS06810	WP_000214278.1	.	prephenate dehydrogenase
+1336	SA_RS06815	WP_000433354.1	.	aminopeptidase
+1345	SA_RS06860	WP_000673098.1	.	aminoacyltransferase FemB
+1359	SA_RS06930	WP_000204619.1	.	phosphate ABC transporter permease subunit PstC
+1364	SA_RS06955	WP_000942303.1	.	ABC transporter ATP-binding protein
+1369	SA_RS06980	WP_000249839.1	.	2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-acetyltransferase
+1374	SA_RS07005	WP_000809131.1	.	cold-shock protein CspA
+1375	SA_RS07010	WP_001791186.1	.	hypothetical protein
+1376	SA_RS07015	WP_000269923.1	.	hypothetical protein
+1377	SA_RS07020	WP_001215907.1	.	acylphosphatase
+1379	SA_RS07030	WP_000138415.1	.	tellurite resistance protein TelA
+1382	SA_RS07045	WP_001185421.1	.	hypothetical protein
+1383	SA_RS07050	WP_000902175.1	.	hypothetical protein
+1392	SA_RS07095	WP_000160906.1	.	UDP-N-acetylglucosamine--N-acetylmuramyl- (pentapeptide) pyrophosphoryl-undecaprenol N-acetylglucosamine transferase
+1393	SA_RS07100	WP_000620194.1	.	acetyltransferase
+1396	SA_RS07115	WP_000801007.1	.	hypothetical protein
+1397	SA_RS07120	WP_000473653.1	.	glucose-specific phosphotransferase enzyme IIA component
+1399	SA_RS07130	WP_000159900.1	.	peptide-methionine (S)-S-oxide reductase
+1400	SA_RS07135	WP_000166063.1	.	hypothetical protein
+1401	SA_RS07140	WP_000175746.1	.	dihydrofolate reductase
+1403	SA_RS07150	WP_000995287.1	.	hypothetical protein
+1405	SA_RS07160	WP_000691942.1	.	hypothetical protein
+1421	SA_RS07240	WP_000487154.1	.	RNA methyltransferase
+1422	SA_RS07245	WP_001286320.1	.	cell cycle protein GpsB
+1426	SA_RS07265	WP_001108889.1	.	Holliday junction resolvase RecU
+1429	SA_RS07280	WP_000253765.1	.	endonuclease III
+1430	SA_RS07285	WP_000362218.1	.	chromosome replication protein DnaD
+1431	SA_RS07290	WP_000858779.1	asnC	asparagine--tRNA ligase
+1434	SA_RS07305	WP_000361540.1	.	CCA-adding enzyme
+1435	SA_RS07310	WP_000690025.1	.	N-acetyl-alpha-D-glucosaminyl L-malate synthase BshA
+1436	SA_RS07315	WP_000839926.1	.	hypothetical protein
+1437	SA_RS07320	WP_001827022.1	.	zinc metallopeptidase
+1440	SA_RS07335	WP_000389524.1	.	hypothetical protein
+1447	SA_RS07370	WP_000774684.1	.	demethylmenaquinone methyltransferase
+1449	SA_RS07380	WP_001792201.1	.	hypothetical protein
+1450	SA_RS07385	WP_001043863.1	.	DNA-binding protein HU
+1451	SA_RS07390	WP_000161745.1	.	glycerol-3-phosphate dehydrogenase (NAD(P)(+))
+1452	SA_RS07395	WP_000165530.1	engA	ribosome biogenesis GTPase Der
+1458	SA_RS07425	WP_000681757.1	.	L-asparaginase
+1459	SA_RS07430	WP_001174258.1	.	thioredoxin reductase
+1465	SA_RS07460	WP_001186912.1	.	hypothetical protein
+1474	SA_RS07505	WP_000064078.1	.	DNA-binding response regulator
+1476	SA_RS07515	WP_000368656.1	.	SMC-Scp complex subunit ScpB
+1477	SA_RS07520	WP_000273371.1	.	segregation and condensation protein A
+1478	SA_RS07525	WP_001183429.1	.	hypothetical protein
+1479	SA_RS07530	WP_000447733.1	.	tyrosine recombinase XerD
+1480	SA_RS07535	WP_000392691.1	.	transcriptional repressor
+1481	SA_RS07540	WP_000365240.1	.	ADP-ribose pyrophosphatase
+1486	SA_RS07565	WP_000454063.1	.	ribonuclease Z
+1487	SA_RS07570	WP_000105070.1	.	glucose-6-phosphate dehydrogenase
+1488	SA_RS07575	WP_000571108.1	.	AraC family transcriptional regulator
+1489	SA_RS07580	WP_001041915.1	.	oligo-1,6-glucosidase
+1495	SA_RS07610	WP_000606693.1	.	hypothetical protein
+1496	SA_RS07615	WP_001789875.1	.	hypothetical protein
+1497	SA_RS07620	WP_000916196.1	.	membrane protein
+1498	SA_RS07625	WP_000367419.1	.	hypothetical protein
+1499	SA_RS07630	WP_000406838.1	.	2-oxoglutarate dehydrogenase E2
+1502	SA_RS07645	WP_001291533.1	.	dihydrolipoyl dehydrogenase
+1503	SA_RS07650	WP_000942210.1	.	DNA repair protein RecN
+1504	SA_RS07655	WP_001124985.1	.	arginine repressor
+1505	SA_RS07660	WP_000183383.1	.	geranyltranstransferase
+1506	SA_RS07665	WP_000159865.1	.	exodeoxyribonuclease 7 small subunit
+1507	SA_RS07670	WP_001286928.1	.	exodeoxyribonuclease 7 large subunit
+1509	SA_RS07680	WP_000241588.1	.	hypothetical protein
+1510	SA_RS07685	WP_000756612.1	.	acetyl-CoA carboxylase biotin carboxylase subunit
+1511	SA_RS07690	WP_001009516.1	.	acetyl-CoA carboxylase biotin carboxyl carrier protein subunit
+1512	SA_RS07695	WP_000626504.1	.	elongation factor P
+1513	SA_RS07700	WP_000087103.1	.	peptidase M24
+1516	SA_RS07715	WP_000141109.1	.	octanoyltransferase LipM
+1518	SA_RS07725	WP_000202188.1	.	glycine dehydrogenase
+1519	SA_RS07730	WP_000019691.1	.	glycine dehydrogenase
+1520	SA_RS07735	WP_000093349.1	.	aminomethyltransferase
+1521	SA_RS07740	WP_001015120.1	.	shikimate kinase
+1522	SA_RS07745	WP_000954378.1	.	hypothetical protein
+1529	SA_RS07780	WP_001223008.1	.	hydroxyacylglutathione hydrolase
+1531	SA_RS07790	WP_000161311.1	.	glucokinase
+1532	SA_RS07795	WP_000087561.1	.	hypothetical protein
+1533	SA_RS07800	WP_001017867.1	.	rhomboid family intramembrane serine protease
+1534	SA_RS07805	WP_001557360.1	.	5-formyltetrahydrofolate cyclo-ligase
+1535	SA_RS07810	WP_001265709.1	.	50S ribosomal protein L33
+1537	SA_RS07820	WP_000863556.1	.	superoxide dismutase
+1540	SA_RS07835	WP_001213908.1	.	zinc ABC transporter ATP-binding protein
+1541	SA_RS07840	WP_000924220.1	.	endonuclease
+1542	SA_RS07845	WP_001062176.1	.	DEAD/DEAH box family ATP-dependent RNA helicase
+1545	SA_RS07860	WP_001283057.1	.	RNA polymerase sigma factor SigA
+1547	SA_RS07870	WP_000411298.1	.	phosphoenolpyruvate synthase regulatory protein
+1548	SA_RS07875	WP_000012632.1	.	CBS domain-containing protein
+1550	SA_RS07885	WP_000929095.1	recO	DNA repair protein RecO
+1551	SA_RS07890	WP_000134765.1	era	GTPase Era
+1552	SA_RS07895	WP_000121875.1	.	cytidine deaminase
+1553	SA_RS07900	WP_000819532.1	.	diacylglycerol kinase
+1554	SA_RS07905	WP_000494134.1	.	endoribonuclease YbeY
+1556	SA_RS07915	WP_000110600.1	.	iron transporter
+1557	SA_RS07920	WP_000492108.1	.	hypothetical protein
+1559	SA_RS07930	WP_000048060.1	.	30S ribosomal protein S21
+1560	SA_RS07935	WP_000108668.1	.	tRNA (N(6)-L-threonylcarbamoyladenosine(37)-C(2))- methylthiotransferase MtaB
+1562	SA_RS07945	WP_001104607.1	.	ribosomal protein L11 methyltransferase
+1563	SA_RS07950	WP_001119021.1	.	molecular chaperone DnaJ
+1566	SA_RS07965	WP_000627144.1	.	HrcA family transcriptional regulator
+1569	SA_RS07980	WP_000368338.1	.	elongation factor 4
+1570	SA_RS07985	WP_001274017.1	.	30S ribosomal protein S20
+1571	SA_RS07990	WP_001282560.1	.	DNA polymerase III subunit delta
+1573	SA_RS08000	WP_000439693.1	.	ComE operon protein 2
+1575	SA_RS08010	WP_000084830.1	.	methyltransferase
+1576	SA_RS08015	WP_001088020.1	.	ribosome silencing factor RsfS
+1577	SA_RS08020	WP_001019324.1	.	haloacid dehalogenase
+1578	SA_RS08025	WP_000725167.1	.	nicotinate-nicotinamide nucleotide adenylyltransferase
+1579	SA_RS08030	WP_000955235.1	.	RNA-binding protein
+1580	SA_RS08035	WP_000666757.1	.	shikimate dehydrogenase
+1581	SA_RS08040	WP_001280137.1	.	ribosome biogenesis GTPase YqeH
+1582	SA_RS08045	WP_000524903.1	.	hypothetical protein
+1585	SA_RS08060	WP_000829749.1	.	membrane protein
+1592	SA_RS08095	WP_001019340.1	.	acetyl-CoA carboxylase biotin carboxyl carrier protein subunit
+1595	SA_RS08110	WP_000431312.1	.	transcription elongation factor GreA
+1596	SA_RS08115	WP_000648617.1	.	uridine kinase
+1597	SA_RS08120	WP_000848304.1	.	protease
+1598	SA_RS08125	WP_000137774.1	.	peptidase U32
+1599	SA_RS08130	WP_000342258.1	.	O-methyltransferase
+1600	SA_RS08135	WP_000134779.1	.	hypothetical protein
+1601	SA_RS08140	WP_000939059.1	.	crossover junction endodeoxyribonuclease RuvA
+1602	SA_RS08145	WP_000426912.1	.	hypothetical protein
+1603	SA_RS08150	WP_000734075.1	alaS	alanine--tRNA ligase
+1605	SA_RS08160	WP_000567017.1	.	hypothetical protein
+1606	SA_RS08165	WP_000066097.1	.	tRNA(5-methylaminomethyl-2-thiouridine)- methyltransferase
+1607	SA_RS08170	WP_000409157.1	.	cysteine desulfurase
+1611	SA_RS08190	WP_000704122.1	.	Rrf2 family transcriptional regulator
+1612	SA_RS08195	WP_000102729.1	.	recombinase RarA
+1613	SA_RS08200	WP_000682646.1	.	tRNA threonylcarbamoyladenosine dehydratase
+1615	SA_RS08210	WP_000044799.1	aspS	aspartate--tRNA ligase
+1616	SA_RS08215	WP_000590826.1	.	histidine--tRNA ligase
+1619	SA_RS08230	WP_001058587.1	.	GTP pyrophosphokinase
+1620	SA_RS08235	WP_000364542.1	.	adenine phosphoribosyltransferase
+1622	SA_RS08245	WP_000749795.1	.	protein translocase subunit SecDF
+1623	SA_RS08250	WP_001160682.1	.	preprotein translocase subunit YajC
+1624	SA_RS08255	WP_001112045.1	.	tRNA-guanine(34) transglycosylase
+1625	SA_RS08260	WP_001019178.1	.	S-adenosylmethionine:tRNA ribosyltransferase-isomerase
+1626	SA_RS08265	WP_001005768.1	.	Holliday junction DNA helicase RuvB
+1627	SA_RS08270	WP_000271550.1	.	Holliday junction ATP-dependent DNA helicase RuvA
+1628	SA_RS08275	WP_000368902.1	.	hypothetical protein
+1630	SA_RS08285	WP_000916187.1	.	50S ribosomal protein L27
+1631	SA_RS08290	WP_000633692.1	.	hypothetical protein
+1634	SA_RS08305	WP_000911041.1	.	rod shape-determining protein MreC
+1636	SA_RS08315	WP_001236734.1	.	membrane protein
+1637	SA_RS08320	WP_000171859.1	.	membrane protein
+1647	SA_RS08370	WP_001108346.1	.	bifunctional folylpolyglutamate synthase/dihydrofolate synthase
+1648	SA_RS08375	WP_000425353.1	valS	valine--tRNA ligase
+1652	SA_RS08395	WP_001270865.1	.	glutamate-1-semialdehyde 2,1-aminomutase
+1654	SA_RS08405	WP_000805951.1	.	uroporphyrinogen III methyltransferase
+1655	SA_RS08410	WP_001230232.1	.	hydroxymethylbilane synthase
+1657	SA_RS08420	WP_000545451.1	.	glutamyl-tRNA reductase
+1658	SA_RS08425	WP_000867697.1	engB	GTP-binding protein
+1659	SA_RS08430	WP_000472302.1	.	ATP-dependent Clp protease ATP-binding subunit ClpX
+1662	SA_RS08445	WP_001280022.1	.	hypothetical protein
+1663	SA_RS08450	WP_000032657.1	.	DNA mismatch repair protein MutT
+1665	SA_RS08460	WP_001138360.1	.	50S ribosomal protein L20
+1666	SA_RS08465	WP_001125540.1	rpmI	50S ribosomal protein L35
+1667	SA_RS08470	WP_001791162.1	.	translation initiation factor IF-3
+1670	SA_RS08485	WP_001790562.1	.	hypothetical protein
+1671	SA_RS08490	WP_000808621.1	.	primosomal protein DnaI
+1673	SA_RS08500	WP_000650082.1	nrdR	NrdR family transcriptional regulator
+1674	SA_RS08505	WP_000106141.1	.	glyceraldehyde-3-phosphate dehydrogenase
+1677	SA_RS08520	WP_001038317.1	.	DNA polymerase I
+1680	SA_RS08535	WP_000080028.1	.	DNA-binding response regulator
+1682	SA_RS08545	WP_000123165.1	.	isocitrate dehydrogenase (NADP(+))
+1683	SA_RS08550	WP_000829167.1	.	citrate synthase
+1685	SA_RS08560	WP_001232648.1	.	pyruvate kinase
+1686	SA_RS08565	WP_000717561.1	.	ATP-dependent 6-phosphofructokinase
+1687	SA_RS08570	WP_000883648.1	.	acetyl-CoA carboxylase carboxyltransferase subunit alpha
+1688	SA_RS08575	WP_000471571.1	.	acetyl-CoA carboxylase carboxyltransferase subunit beta
+1689	SA_RS08580	WP_000058389.1	.	NAD-dependent malic enzyme 4
+1691	SA_RS08590	WP_000626082.1	.	oligoribonuclease
+1693	SA_RS08600	WP_000277602.1	.	universal stress protein UspA
+1698	SA_RS08625	WP_000634175.1	.	universal stress protein UspA
+1699	SA_RS08630	WP_000040063.1	.	acetate kinase
+1700	SA_RS08635	WP_000840576.1	.	adenine methyltransferase
+1707	SA_RS08670	WP_000207852.1	.	hypothetical protein
+1712	SA_RS08695	WP_000553924.1	.	peroxiredoxin
+1716	SA_RS08715	WP_000721699.1	.	haloacid dehalogenase
+1718	SA_RS08725	WP_000287588.1	.	1-acyl-sn-glycerol-3-phosphate acyltransferase
+1719	SA_RS08730	WP_001279338.1	.	serine protease
+1722	SA_RS08745	WP_031761401.1	.	hypothetical protein
+1727	SA_RS08770	WP_001016004.1	.	acetoin dehydrogenase
+1734	SA_RS08805	WP_000383814.1	.	hypothetical protein
+1735	SA_RS08810	WP_000150169.1	.	UDP-N-acetylmuramate--L-alanine ligase
+1738	SA_RS08825	WP_001091387.1	.	hypothetical protein
+1741	SA_RS08840	WP_001549040.1	.	peptidase
+1743	SA_RS08850	WP_001266161.1	.	tRNA (guanine-N(7)-)-methyltransferase
+1744	SA_RS08855	WP_000434765.1	.	phosphotransferase
+1746	SA_RS08865	WP_000265417.1	.	diguanylate cyclase
+1748	SA_RS08875	WP_001217125.1	.	16S rRNA pseudouridine(516) synthase
+1755	SA_RS08910	WP_000526539.1	.	TIGR01212 family radical SAM protein
+1759	SA_RS08930	WP_001789006.1	.	hypothetical protein
+1761	SA_RS08940	WP_001008549.1	.	6,7-dimethyl-8-ribityllumazine synthase
+1763	SA_RS08950	WP_000493887.1	.	riboflavin synthase subunit alpha
+1769	SA_RS08980	WP_000384171.1	.	hypothetical protein
+1774	SA_RS09005	WP_001096495.1	.	transaldolase
+1783	SA_RS09050	WP_000366163.1	.	hypothetical protein
+1787	SA_RS09070	WP_001557389.1	.	nucleoside triphosphatase YtkD
+1788	SA_RS09075	WP_000718107.1	.	membrane protein insertion efficiency factor YidD
+1791	SA_RS09090	WP_001557391.1	.	hypothetical protein
+1840	SA_RS09330	WP_000162881.1	.	ferrochelatase
+1841	SA_RS09335	WP_000233526.1	.	uroporphyrinogen decarboxylase
+1845	SA_RS09355	WP_000216874.1	.	multidrug ABC transporter ATP-binding protein
+1846	SA_RS09360	WP_000004981.1	.	cell-cycle regulation protein HIT
+1847	SA_RS09365	WP_000648118.1	.	hypothetical protein
+1850	SA_RS09380	WP_001244175.1	.	3'-5' exoribonuclease
+1851	SA_RS09385	WP_000584628.1	.	DNA double-strand break repair Rad50 ATPase
+1852	SA_RS09390	WP_000238227.1	.	DNA repair exonuclease
+1854	SA_RS09400	WP_000290301.1	.	hypothetical protein
+1856	SA_RS09410	WP_000375864.1	.	transcriptional regulator
+1859	SA_RS09425	WP_000669376.1	.	RNA pseudouridine synthase
+1861	SA_RS09435	WP_000901023.1	.	membrane protein
+1862	SA_RS09440	WP_000031108.1	.	hypothetical protein
+1863	SA_RS09445	WP_001251224.1	.	glucosamine-6-phosphate isomerase
+1903	SA_RS09645	WP_001011595.1	.	glutamate-1-semialdehyde 2,1-aminomutase
+1909	SA_RS09675	WP_000379098.1	.	metal-dependent hydrolase
+1911	SA_RS09685	WP_000886462.1	.	membrane protein
+1912	SA_RS09690	WP_000535834.1	.	teichoic acid ABC transporter ATP-binding protein
+1913	SA_RS09695	WP_000435806.1	.	hypothetical protein
+1914	SA_RS09700	WP_001124422.1	.	regulatory protein RecX
+1915	SA_RS09705	WP_000830380.1	.	monofunctional glycosyltransferase
+1917	SA_RS09715	WP_001005407.1	.	hypothetical protein
+1919	SA_RS09725	WP_000184383.1	.	acyl-CoA thioesterase
+1923	SA_RS09745	WP_000428172.1	.	hypothetical protein
+1925	SA_RS09755	WP_000153535.1	.	DNA-binding response regulator
+1926	SA_RS09760	WP_001017131.1	.	two-component sensor histidine kinase
+1927	SA_RS09765	WP_000149064.1	.	transporter
+1928	SA_RS09770	WP_001110179.1	.	hypothetical protein
+1929	SA_RS09775	WP_000636142.1	.	methionine aminopeptidase
+1932	SA_RS09790	WP_001163421.1	.	hypothetical protein
+1934	SA_RS09800	WP_000544969.1	.	glutamine amidotransferase
+1935	SA_RS09805	WP_001250343.1	.	UDP-N-acetylmuramate--alanine ligase
+1936	SA_RS09810	WP_000949467.1	.	non-heme ferritin
+1938	SA_RS09820	WP_000613738.1	.	DNA polymerase III subunit epsilon
+1940	SA_RS09830	WP_000548781.1	.	hypothetical protein
+1942	SA_RS09840	WP_001231451.1	.	diacylglycerol kinase
+1944	SA_RS09850	WP_000545370.1	.	aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase subunit B
+1945	SA_RS09855	WP_000027919.1	gatA	glutamyl-tRNA(Gln) amidotransferase subunit A
+1946	SA_RS09860	WP_000170162.1	.	aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase subunit C
+1949	SA_RS09875	WP_000774556.1	ligA	DNA ligase (NAD(+)) LigA
+1950	SA_RS09880	WP_000992924.1	.	ATP-dependent DNA helicase PcrA
+1951	SA_RS09885	WP_000272056.1	.	geranylgeranylglyceryl/heptaprenylglyceryl phosphate synthase
+1952	SA_RS09890	WP_001165363.1	.	hypothetical protein
+1955	SA_RS09905	WP_000434933.1	.	staphostatin A
+1960	SA_RS09930	WP_000897635.1	.	nitric oxide synthase oxygenase
+1964	SA_RS09950	WP_000275727.1	.	pectate lyase
+1965	SA_RS09955	WP_000149686.1	.	isochorismatase
+1967	SA_RS09965	WP_001793421.1	.	hypothetical protein
+1968	SA_RS09970	WP_001021210.1	.	aldehyde dehydrogenase
+1969	SA_RS09975	WP_000181315.1	.	hypothetical protein
+1972	SA_RS09990	WP_001188043.1	.	choloylglycine hydrolase
+1973	SA_RS09995	WP_000713072.1	.	hypothetical protein
+1975	SA_RS10005	WP_000966288.1	.	membrane protein
+1977	SA_RS10015	WP_001221651.1	.	membrane protein
+1978	SA_RS10020	WP_000763043.1	.	antibiotic ABC transporter ATP-binding protein
+1979	SA_RS10025	WP_000645727.1	.	membrane protein
+1981	SA_RS10035	WP_000691584.1	.	GntR family transcriptional regulator
+1983	SA_RS10045	WP_000990056.1	.	hypothetical protein
+2092	SA_RS10600	WP_000141432.1	.	sucrose-6-phosphate hydrolase
+2095	SA_RS10615	WP_000581076.1	.	oxidoreductase
+2097	SA_RS10625	WP_001283612.1	.	transcriptional regulator
+2098	SA_RS10630	WP_000602057.1	.	ABC transporter ATP-binding protein
+2101	SA_RS10645	WP_000159041.1	.	N(6)-L-threonylcarbamoyladenine synthase TsaD
+2102	SA_RS10650	WP_000372758.1	.	ribosomal-protein-alanine N-acetyltransferase RimI
+2103	SA_RS10655	WP_001086737.1	.	tRNA threonylcarbamoyladenosine biosynthesis protein TsaB
+2107	SA_RS10675	WP_000047811.1	.	acetolactate synthase, large subunit, biosynthetic type
+2124	SA_RS10760	WP_001052491.1	.	anti-sigma B factor antagonist
+2128	SA_RS10780	WP_000948331.1	.	antitoxin MazE
+2129	SA_RS10785	WP_001281154.1	.	alanine racemase
+2130	SA_RS10790	WP_000581197.1	.	holo-ACP synthase
+2131	SA_RS10795	WP_001557481.1	.	membrane protein
+2134	SA_RS10810	WP_001092411.1	.	potassium-transporting ATPase subunit C
+2143	SA_RS10855	WP_000159631.1	ddl	D-alanine--D-alanine ligase
+2144	SA_RS10860	WP_001109939.1	.	cell division protein FtsW
+2146	SA_RS10870	WP_000581792.1	.	hypothetical protein
+2147	SA_RS10875	WP_000138932.1	.	hypothetical protein
+2148	SA_RS10880	WP_000571549.1	.	cardiolipin synthase
+2154	SA_RS10910	WP_000594954.1	.	hydroxymethylpyrimidine/phosphomethylpyrimidine kinase
+2156	SA_RS10920	WP_001803868.1	.	hypothetical protein
+2159	SA_RS10935	WP_000846746.1	.	hypothetical protein
+2160	SA_RS10940	WP_000447678.1	.	beta-hydroxyacyl-ACP dehydratase
+2162	SA_RS10950	WP_000384523.1	.	membrane protein
+2165	SA_RS10965	WP_000511135.1	.	ATP synthase subunit beta
+2166	SA_RS10970	WP_000157603.1	.	ATP synthase subunit gamma
+2167	SA_RS10975	WP_000974881.1	.	ATP synthase subunit alpha
+2168	SA_RS10980	WP_000241344.1	.	ATP synthase subunit delta
+2169	SA_RS10985	WP_000140679.1	.	ATP synthase subunit B
+2170	SA_RS10990	WP_001048816.1	.	ATP synthase subunit C
+2171	SA_RS10995	WP_000349655.1	.	ATP synthase subunit A
+2174	SA_RS11010	WP_000048712.1	upp	uracil phosphoribosyltransferase
+2175	SA_RS11015	WP_000120494.1	.	serine hydroxymethyltransferase
+2177	SA_RS11025	WP_000697334.1	.	protein-tyrosine-phosphatase
+2179	SA_RS11035	WP_000248732.1	.	N5-glutamine S-adenosyl-L-methionine-dependent methyltransferase
+2181	SA_RS11045	WP_000273358.1	.	thymidine kinase
+2182	SA_RS11050	WP_000808968.1	rpmE2	50S ribosomal protein L31 type B
+2184	SA_RS11060	WP_001206093.1	.	aldehyde dehydrogenase
+2185	SA_RS11065	WP_000451438.1	.	HxlR family transcriptional regulator
+2186	SA_RS11070	WP_000046602.1	.	UDP-N-acetylglucosamine 1-carboxyvinyltransferase
+2187	SA_RS11075	WP_001131841.1	.	fructose-bisphosphate aldolase
+2189	SA_RS11085	WP_000159960.1	.	CTP synthetase
+2196	SA_RS11120	WP_000164421.1	.	S-ribosylhomocysteine lyase
+2197	SA_RS11125	WP_001024035.1	.	membrane protein
+2198	SA_RS11130	WP_001242311.1	deoA	pyrimidine-nucleoside phosphorylase
+2202	SA_RS11150	WP_000070866.1	.	DNA starvation/stationary phase protection protein
+2203	SA_RS11155	WP_001123303.1	.	hypothetical protein
+2204	SA_RS11160	WP_000123398.1	.	EVE domain-containing protein
+2205	SA_RS11165	WP_000808817.1	.	membrane protein
+2208	SA_RS11180	WP_000003759.1	.	transcriptional regulator
+2224	SA_RS11260	WP_001292149.1	.	mannitol-specific phosphotransferase enzyme IIA component
+2228	SA_RS11280	WP_000894032.1	.	hypothetical protein
+2229	SA_RS11285	WP_000347896.1	.	ABC transporter permease
+2252	SA_RS11400	WP_001214661.1	.	ABC transporter substrate-binding protein
+2254	SA_RS11410	WP_000951624.1	.	alanine racemase
+2258	SA_RS11430	WP_000215236.1	.	alkaline shock protein 23
+2259	SA_RS11435	WP_000002683.1	.	hypothetical protein
+2260	SA_RS11440	WP_000825819.1	.	hypothetical protein
+2267	SA_RS11475	WP_001078309.1	.	lactose-specific phosphotransferase enzyme IIA component
+2268	SA_RS11480	WP_000047009.1	.	tagatose 1,6-diphosphate aldolase
+2271	SA_RS11495	WP_000974608.1	.	galactose-6-phosphate isomerase subunit LacA
+2276	SA_RS11520	WP_001015500.1	.	2,5-diketo-D-gluconic acid reductase
+2293	SA_RS11605	WP_001250038.1	.	50S ribosomal protein L13
+2295	SA_RS11615	WP_000791620.1	.	energy-coupling factor transporter protein EcfT
+2298	SA_RS11630	WP_000542274.1	.	50S ribosomal protein L17
+2299	SA_RS11635	WP_000569649.1	.	DNA-directed RNA polymerase subunit alpha
+2300	SA_RS11640	WP_000101625.1	.	30S ribosomal protein S11
+2301	SA_RS11645	WP_000090796.1	.	30S ribosomal protein S13
+2302	SA_RS11650	WP_000868342.1	rpmJ	50S ribosomal protein L36
+2303	SA_RS11655	WP_001118443.1	infA	translation initiation factor IF-1
+2304	SA_RS11660	WP_001021468.1	.	adenylate kinase
+2305	SA_RS11665	WP_000616784.1	.	protein translocase subunit SecY
+2306	SA_RS11670	WP_000766074.1	.	50S ribosomal protein L15
+2307	SA_RS11675	WP_001096577.1	.	50S ribosomal protein L30
+2308	SA_RS11680	WP_000113851.1	.	30S ribosomal protein S5
+2309	SA_RS11685	WP_000623881.1	.	50S ribosomal protein L18
+2310	SA_RS11690	WP_000091975.1	.	50S ribosomal protein L6
+2311	SA_RS11695	WP_000178881.1	.	30S ribosomal protein S8
+2312	SA_RS11700	WP_001140799.1	rpsN	30S ribosomal protein S14 type Z
+2313	SA_RS11705	WP_001080824.1	.	50S ribosomal protein L5
+2314	SA_RS11710	WP_000547687.1	.	50S ribosomal protein L24
+2315	SA_RS11715	WP_000615921.1	.	50S ribosomal protein L14
+2316	SA_RS11720	WP_000004085.1	.	30S ribosomal protein S17
+2317	SA_RS11725	WP_000644737.1	.	50S ribosomal protein L29
+2318	SA_RS11730	WP_000926310.1	.	50S ribosomal protein L16
+2319	SA_RS11735	WP_000529877.1	.	30S ribosomal protein S3
+2320	SA_RS11740	WP_000387527.1	.	50S ribosomal protein L22
+2321	SA_RS11745	WP_000124353.1	.	30S ribosomal protein S19
+2322	SA_RS11750	WP_000985472.1	rplB	50S ribosomal protein L2
+2323	SA_RS11755	WP_000388082.1	.	50S ribosomal protein L23
+2324	SA_RS11760	WP_000024827.1	.	50S ribosomal protein L4
+2325	SA_RS11765	WP_000160212.1	.	50S ribosomal protein L3
+2326	SA_RS11770	WP_001118667.1	.	30S ribosomal protein S10
+2328	SA_RS11780	WP_000800700.1	.	guanine permease
+2332	SA_RS11800	WP_001159898.1	.	glucose uptake protein GlcU
+2335	SA_RS11815	WP_000051210.1	.	hypothetical protein
+2336	SA_RS11820	WP_001161085.1	.	membrane protein
+2338	SA_RS11830	WP_000413862.1	.	lipid II:glycine glycyltransferase
+2339	SA_RS11835	WP_001549681.1	.	membrane protein
+2341	SA_RS11845	WP_000951058.1	.	MarR family transcriptional regulator
+2343	SA_RS11855	WP_000066900.1	.	transcriptional regulator
+2346	SA_RS11870	WP_000230173.1	.	cyclic pyranopterin monophosphate synthase
+2347	SA_RS11875	WP_000643986.1	.	molybdenum cofactor guanylyltransferase
+2348	SA_RS11880	WP_000866971.1	.	molybdopterin synthase sulfur carrier subunit
+2349	SA_RS11885	WP_000808495.1	.	molybdopterin synthase catalytic subunit
+2350	SA_RS11890	WP_000602950.1	.	molybdopterin-guanine dinucleotide biosynthesis protein B
+2352	SA_RS11900	WP_000134526.1	.	cyclic pyranopterin monophosphate synthase accessory protein
+2353	SA_RS11905	WP_000503822.1	.	molybdenum cofactor biosynthesis protein
+2354	SA_RS11910	WP_000076930.1	.	molybdopterin biosynthesis protein MoeB
+2356	SA_RS11920	WP_001113093.1	.	molybdenum ABC transporter permease subunit
+2358	SA_RS11930	WP_001030823.1	.	formate dehydrogenase accessory protein FdhD
+2372	SA_RS12000	WP_000036076.1	.	transcriptional regulator
+2384	SA_RS12060	WP_000417018.1	.	2-hydroxyacid dehydrogenase
+2387	SA_RS12075	WP_000921246.1	.	membrane protein
+2396	SA_RS12120	WP_000429674.1	.	alanine glycine permease
+2398	SA_RS12130	WP_000205307.1	.	membrane protein
+2400	SA_RS12140	WP_000285450.1	.	haloacid dehalogenase
+2402	SA_RS12150	WP_000904065.1	.	hypothetical protein
+2414	SA_RS12210	WP_000277968.1	.	formimidoylglutamase
+2416	SA_RS12220	WP_000655864.1	.	ribose-5-phosphate isomerase
+2426	SA_RS12270	WP_001279375.1	.	type 2 isopentenyl-diphosphate Delta-isomerase
+2428	SA_RS12280	WP_000234727.1	.	3-hydroxyacyl-CoA dehydrogenase
+2430	SA_RS12290	WP_000620864.1	.	esterase
+2434	SA_RS12310	WP_000828569.1	.	TetR family transcriptional regulator
+2441	SA_RS12345	WP_001229920.1	.	hemin ABC transporter ATP-binding protein
+2443	SA_RS12355	WP_000249497.1	.	DNA-binding response regulator
+2444	SA_RS12360	WP_000477338.1	.	two-component sensor histidine kinase
+2445	SA_RS12365	WP_023604938.1	.	LytTR family transcriptional regulator
+2447	SA_RS12375	WP_000211366.1	.	malate:quinone oxidoreductase
+2448	SA_RS12380	WP_000960858.1	.	L-lactate permease
+2456	SA_RS12420	WP_001253464.1	.	membrane protein
+2459	SA_RS12435	WP_000656771.1	.	TetR family transcriptional regulator
+2460	SA_RS12440	WP_000633068.1	.	magnesium transporter CorA
+2475	SA_RS12515	WP_000186933.1	.	hypothetical protein
+2477	SA_RS12525	WP_000606768.1	.	nitrate reductase subunit delta
+2492	SA_RS12600	WP_000162810.1	.	protein disulfide-isomerase
+2497	SA_RS12625	WP_000825921.1	.	amino acid ABC transporter substrate-binding protein
+2500	SA_RS12640	WP_000762708.1	.	hypothetical protein
+2501	SA_RS12645	WP_001125208.1	gpmA	2,3-bisphosphoglycerate-dependent phosphoglycerate mutase
+2502	SA_RS12650	WP_000019127.1	.	transporter
+2512	SA_RS12700	WP_001046645.1	.	biotin synthase
+2521	SA_RS12745	WP_000779360.1	.	hypothetical protein
+2538	SA_RS12830	WP_000398941.1	.	amino acid ABC transporter permease
+2539	SA_RS12835	WP_000721551.1	.	glycine/betaine ABC transporter substrate-binding protein
+2554	SA_RS12910	WP_000732076.1	.	hypothetical protein
+2558	SA_RS12930	WP_000598772.1	.	peptide ABC transporter ATP-binding protein
+2561	SA_RS12945	WP_000472243.1	.	nickel ABC transporter permease
+2619	SA_RS13235	WP_000376235.1	.	MarR family transcriptional regulator
+2620	SA_RS13240	WP_000067116.1	.	acetyltransferase
+2627	SA_RS13275	WP_000759366.1	.	class A sortase SrtA
+2632	SA_RS13300	WP_001140234.1	.	L-serine dehydratase, iron-sulfur-dependent subunit beta
+2635	SA_RS13315	WP_001557526.1	.	transporter
+2639	SA_RS13335	WP_000473678.1	.	PTS glucoside EIICBA component
+2641	SA_RS13345	WP_001001019.1	.	holin-like protein CidB
+2642	SA_RS13350	WP_000549734.1	.	holin-like protein CidA
+2644	SA_RS13360	WP_000011687.1	.	hypothetical protein
+2647	SA_RS13375	WP_000151982.1	.	hydroxymethylglutaryl-CoA synthase
+2656	SA_RS13420	WP_000259692.1	.	1-pyrroline-5-carboxylate dehydrogenase
+2658	SA_RS13430	WP_001221404.1	.	hypothetical protein
+2660	SA_RS13440	WP_000076661.1	.	copper chaperone CopZ
+2669	SA_RS13485	WP_000379821.1	.	O-acetyltransferase OatA
+2675	SA_RS13515	WP_000901509.1	.	TetR family transcriptional regulator
+2678	SA_RS13530	WP_000616225.1	.	glyoxalase
+2692	SA_RS13600	WP_000277419.1	.	dihydroorotate dehydrogenase 2
+2693	SA_RS13605	WP_000159839.1	.	membrane protein
+2694	SA_RS13610	WP_000606210.1	.	hypothetical protein
+2695	SA_RS13615	WP_000125705.1	.	hypothetical protein
+2710	SA_RS13690	WP_000860047.1	.	3-methyl-2-oxobutanoate hydroxymethyltransferase
+2713	SA_RS13705	WP_000846636.1	.	L-lactate dehydrogenase
+2718	SA_RS13730	WP_001031409.1	.	class I fructose-bisphosphate aldolase
+2719	SA_RS13735	WP_001130051.1	.	malate:quinone oxidoreductase
+2723	SA_RS13755	WP_000011688.1	.	hypothetical protein
+2724	SA_RS13760	WP_000066521.1	.	oxygen-dependent choline dehydrogenase
+2725	SA_RS13765	WP_000421713.1	.	betaine-aldehyde dehydrogenase
+2726	SA_RS13770	WP_001789908.1	.	hypothetical protein
+2731	SA_RS13795	WP_000173331.1	.	anaerobic ribonucleoside-triphosphate reductase activating protein
+2732	SA_RS13800	WP_001071729.1	.	anaerobic ribonucleoside-triphosphate reductase
+2739	SA_RS13835	WP_041202014.1	.	hypothetical protein
+2752	SA_RS13900	WP_000138218.1	.	transcriptional regulator
+2754	SA_RS13910	WP_001005835.1	.	arginine-ornithine antiporter
+2756	SA_RS13920	WP_000129417.1	.	arginine deiminase
+2766	SA_RS13970	WP_001125628.1	.	N-acetylmuramoyl-L-alanine amidase
+2825	SA_RS14265	WP_001059079.1	.	cold-shock protein
+2828	SA_RS14280	WP_000491382.1	.	hypothetical protein
+2830	SA_RS14290	WP_000215587.1	.	ribosomal RNA small subunit methyltransferase G
+2832	SA_RS14300	WP_000362509.1	.	tRNA modification GTPase
+2833	SA_RS14305	WP_000409682.1	rnpA	ribonuclease P protein component
+2834	SA_RS14310	WP_000240855.1	.	50S ribosomal protein L34
