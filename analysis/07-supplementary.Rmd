@@ -1,0 +1,161 @@
+---
+title: "Results Section: Supplementary subsampling"
+output:
+  pdf_document: default
+---
+
+### Load Up Packages
+```{r}
+library(ggplot2)
+library(dplyr)
+options(scipen=999)
+```
+
+### Read In The Data
+```{r}
+results <- read.table("../data/supplementary-subsample/subsample-summary.txt", header = TRUE, sep = "\t")
+results <- results[results$mutations < 10000 & results$simulation != 'EF',]
+colnames(results)
+```
+
+### Plots
+#### Run Time
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=runtime)) +
+    ylab("Run Time (In Minutes)") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(
+        breaks = seq(min(results$coverage), max(results$coverage), by = 20),
+    ) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### Price
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=price)) +
+    ylab("Price (USD)") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(
+        breaks = seq(min(results$coverage), max(results$coverage), by = 20),
+    ) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### n50_contig_length
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=n50_contig_length)) +
+    ylab("Length") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(
+        breaks = seq(min(results$coverage), max(results$coverage), by = 20),
+    ) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+
+
+#### mean_contig_length
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=mean_contig_length)) +
+    ylab("Length") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(
+        breaks = seq(min(results$coverage), max(results$coverage), by = 20),
+    ) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### max_contig_length
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=max_contig_length)) +
+    ylab("Length") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(breaks = unique(results$coverage)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### total_kmer
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=total_kmer)) +
+    ylab("Count") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(breaks = unique(results$coverage)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### singleton
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=total_singleton)) +
+    ylab("Count") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(breaks = unique(results$coverage)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### total_contig_200bp
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=total_contig_200bp)) +
+    ylab("Count") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(breaks = unique(results$coverage)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### total_contig
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=total_contig)) +
+    ylab("Count") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(breaks = unique(results$coverage)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
+#### total_gene
+```{r fig.width=12, fig.asp=0.4}
+p <- ggplot(data=results, aes(x=coverage, y=total_gene)) +
+    ylab("Count") +
+    xlab("Coverage") +
+    geom_point(aes(color=simulation)) +    
+    scale_x_continuous(breaks = unique(results$coverage)) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"))
+p
+```
+
