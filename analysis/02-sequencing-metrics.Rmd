@@ -95,9 +95,6 @@ p <- ggplot(data=submissions, aes(x=year, y=overall)) +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"))
 p
-
-# Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-01-submissions-per-year'))
 ```
 
 #### Submission Ranks
@@ -126,7 +123,7 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title, group=rank, label=titl
 p
 
 # Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-04-rank-per-year'))
+staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-03-rank-per-year'))
 ```
 
 #### Assembly Size

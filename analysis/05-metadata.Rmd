@@ -107,7 +107,7 @@ p
 ```
 
 #### Overall Published vs Unpublished Submissions
-```{r Figure 8 Pubs, fig.width=12, fig.asp=0.5}
+```{r Figure Pubs, fig.width=12, fig.asp=0.5}
 melted <- melt(submissions, id=c('year'),
                measure.vars = c('overall_published', 'overall_unpublished'))
 melted$title <- ifelse(melted$variable == 'overall_published', 'Published', 'Unpublished')
@@ -127,11 +127,36 @@ p <- ggplot(data=melted, aes(x=year, y=value, fill=title)) +
     
 
 p
-
-# Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-08-published-per-year'))
 ```
 
+#### Overall Published vs Unpublished Submissions
+```{r Figure 8 Pubs, fig.width=12, fig.asp=0.5}
+melted <- melt(submissions, id=c('year'),
+               measure.vars = c('overall_published', 'overall_unpublished'))
+melted$title <- ifelse(melted$variable == 'overall_published', 'Published', 'Unpublished')
+melted$final <- ifelse(melted$year == 2017, melted$value, "") 
+
+p <- ggplot(data=melted, aes(x=year, y=value, fill=title, label=final)) +
+    xlab("Year") +
+    ylab("Cumulative Count") +
+    geom_bar(stat='identity', position='stack') +
+    # geom_text(position = position_stack(vjust = 0.50)) +
+    geom_text(aes(year, overall + 1000, label = overall, fill = NULL), data = submissions) +
+    scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
+    scale_x_continuous(breaks = round(
+        seq(min(submissions$year), max(submissions$year), by = 1), 1
+    )) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"),
+          legend.title = element_blank())
+    
+
+p
+
+# Output plot to PDF and PNG
+staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-01-submission-published-per-year'))
+```
 
 ### Metadata Information
 

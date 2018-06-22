@@ -52,6 +52,92 @@ This gives us 38 columns for each year. These columns are:
 20. count: Total number of samples in a given year.
 21-38: overall_*X*: The cumulative totals of previous years for column *x*
 
+#### Compare MLST Predictions
+```{r}
+mlst <- get_sequence_type(ps$sample_id)
+metadata <- merge(
+    ps, 
+    get_metadata(ps$sample_id),
+    by='sample_id'
+)
+metadata$year <- sapply(
+    metadata$first_public,
+    function(x) {
+        strsplit(x, "-")[[1]][1]
+    }
+)
+
+metadata$rank_name <- ifelse(
+    metadata$rank == 3,
+    'Gold',
+    ifelse(
+        metadata$rank == 2,
+        'Silver',
+        'Bronze'
+    )
+)
+```
+
+
+```{r}
+mlst_temp <- merge(mlst, metadata[,c('sample_id', 'is_paired')], by='sample_id')
+mlst_temp$is_paired <- ifelse(mlst_temp$is_paired == "", FALSE, TRUE)
+
+
+mlst_temp$agreement <- paste0(
+    ifelse(mlst$st == 0 | mlst$st == 0, '000',
+        ifelse(mlst$mentalist == mlst$ariba & mlst$mentalist == mlst$blast, '111', 
+            ifelse(mlst$mentalist == mlst$ariba, '110', 
+                ifelse(mlst$mentalist == mlst$blast, '101',
+                    ifelse(mlst$blast == mlst$ariba, '011',
+                        ifelse(mlst$mentalist > 0, '100', 
+                            ifelse(mlst$ariba > 0, '010',
+                                ifelse(mlst$blast > 0, '001', '000')
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+
+# mentalist
+# ariba
+# blast
+mlst_temp$agreement<- ifelse(mlst_temp$is_paired == TRUE, mlst_temp$agreement,
+                             paste0(substr(mlst_temp$agreement, 1, 1), '-',
+                                    substr(mlst_temp$agreement, 3, 3)))
+table(mlst_temp$agreement)
+platform <- metadata[,c('sample_id', 'instrument_model', 'study_accession', 'year', 'rank_name')]
+mlst_temp <- merge(mlst_temp, platform, by='sample_id')
+```
+
+```{r}
+table(mlst_temp[mlst_temp$agreement == '101',]$rank_name)
+table(mlst_temp[mlst_temp$agreement == '011',]$rank_name)
+table(mlst_temp[mlst_temp$agreement == '110',]$rank_name)
+```
+
+### PubMLST ST Counts
+```{r}
+st_counts <- merge(
+    read.table('../data/pubmlst-counts.txt', header=TRUE, sep="\t"),
+    staphopia <- top_st[top_st$st > 0,c('st', 'count')],
+    by='st', all=TRUE
+)
+st_counts[is.na(st_counts)] <- 0
+st_counts <- st_counts[st_counts$pubmlst_count > 0,]
+nrow(st_counts)
+nrow(st_counts[st_counts$count == 0,])
+nrow(st_counts[st_counts$count >= 1,])
+nrow(st_counts[st_counts$pubmlst_count == 1,])
+nrow(st_counts[st_counts$pubmlst_count <= 2,])
+table(st_counts[st_counts$count == 0,]$pubmlst_count)
+summary(st_counts[st_counts$count > 0,]$pubmlst_count)
+st_counts[st_counts$pubmlst_count > 10 & st_counts$count == 0,]
+```
+
 ### Summary of MLST Diversity
 #### Assignment Breakdown
 ```{r}
@@ -144,9 +230,6 @@ p <- ggplot(data=top_st[1:10,], aes(x=reorder(st, -count), y=count)) +
     theme(axis.text=element_text(size=12),
           axis.title=element_text(size=14,face="bold"))
 p
-
-# Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-05-top-10-sequence-types'))
 ```
 
 #### Total Allele Matches For Unassigned Samples

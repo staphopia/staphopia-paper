@@ -83,7 +83,7 @@ p <- ggplot(data=results_clean[between(results_clean$run_time, 10, 120),],
 p
 
 # Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-03-pipeline-run-time'))
+staphopia::write_plot(p, paste0(getwd(), '/../figures/supplementary-figure-02-pipeline-run-time'))
 ```
 
 

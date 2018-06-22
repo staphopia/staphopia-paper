@@ -10,6 +10,7 @@ library(reshape2)
 library(scales)
 library(dplyr)
 library(gridExtra)
+library(grid)
 produce_all_plots = FALSE
 ```
 
@@ -113,8 +114,6 @@ We can use the results from Ariba (via MEGARes) to identify samples with predict
 These results are based on the a match to a SCCmec related cluster.
 ```{r}
 ariba <- get_sccmec_ariba(ps$sample_id, resistance_report = TRUE)
-```
-```{r} 
 table(ariba$mec)
 ```
 ### Relaxed
@@ -123,8 +122,6 @@ These results allow for partial matches to a SCCmec related cluster.
 ariba_relaxed <- get_sccmec_ariba(ps$sample_id,
                                   resistance_report = TRUE,
                                   include_all=TRUE)
-```
-```{r}
 table(ariba_relaxed$mec)
 ```
 
@@ -168,9 +165,6 @@ p <- ggplot(data=merge(top_type, sccmec_primer, by='sample_id'),
               axis.title=element_text(size=14,face="bold"),
               legend.title = element_blank())
 p
-
-# Output plot to PDF and PNG
-# staphopia::write_plot(p, paste0(getwd(), '/images/figure-x-sccmec-coverage-primer'))
 ```
 
 ##### *mec* Predicted By Ariba (Strict)
@@ -186,9 +180,6 @@ p <- ggplot(data=merge(top_type, ariba, by='sample_id'),
               axis.title=element_text(size=14,face="bold"),
               legend.title = element_blank())
 p
-
-# Output plot to PDF and PNG
-# staphopia::write_plot(p, paste0(getwd(), '/images/figure-x-sccmec-coverage-ariba'))
 ```
 
 ##### *mec* Predicted By Ariba (Relaxed)
@@ -204,9 +195,6 @@ p <- ggplot(data=merge(top_type, ariba_relaxed, by='sample_id'),
               axis.title=element_text(size=14,face="bold"),
               legend.title = element_blank())
 p
-
-# Output plot to PDF and PNG
-# staphopia::write_plot(p, paste0(getwd(), '/images/figure-x-sccmec-coverage-ariba-relaxed'))
 ```
 
 #### Plot Of SCCmec Covered and Top *mec* Region Covered
@@ -322,18 +310,11 @@ mec <- merge(mec, data.frame(
     sample_id=ariba$sample_id, 
     ariba_mec=ariba$mec
 ), by='sample_id', all=TRUE)
-mec <- merge(mec, data.frame(
-    sample_id=ariba_relaxed$sample_id, 
-    ariba_relaxed_mec=ariba_relaxed$mec
-), by='sample_id', all=TRUE)
 mec$agreement <- paste0(
     ifelse(mec$protein_mec, 1, 0),
     ifelse(mec$primer_mec, 1, 0),
     ifelse(is.na(mec$ariba_mec), '-', ifelse(
         mec$ariba_mec, 1, 0
-    )),
-    ifelse(is.na(mec$ariba_relaxed_mec), '-', ifelse(
-        mec$ariba_relaxed_mec, 1, 0
     ))
 )
 table(mec$agreement)
@@ -350,13 +331,58 @@ The order of numbering is:
 * 1: **mecA** with BSR > 0.95 based on Proteins
 * 2: **mecA** with full Primer hit
 * 3: **mec** with full match based on Ariba
-* 4: **mec** with partial match based on Ariba
 
 Example:
 
 * 00-- : Single-End, Protein and Primer are False
 * 0000 : All approaches agree that **mec** is not predicted
 * 1111 : All approaches agree that **mec** is predicted
+
+```{r}
+metrics <- merge(
+    ps,
+    merge(
+        get_assembly_stats(ps$sample_id),
+        merge(
+            get_metadata(ps$sample_id),
+            get_sequence_quality(ps$sample_id, stage='cleanup'),
+            by='sample_id'
+        ),
+        by='sample_id'
+    ),
+    by='sample_id'
+)
+metrics$year <- sapply(
+    metrics$first_public,
+    function(x) {
+        strsplit(x, "-")[[1]][1]
+    }
+)
+
+metrics$rank_name <- ifelse(
+    metrics$rank.x == 3,
+    'Gold',
+    ifelse(
+        metrics$rank.x == 2,
+        'Silver',
+        'Bronze'
+    )
+)
+platform <- metrics[,c('sample_id', 'instrument_model', 'total_contig', 'study_accession', 'rank_name')]
+mec_temp <- merge(mec, platform, by='sample_id')
+```
+
+```{r}
+table(mec_temp[mec_temp$agreement == '111',]$study_accession)
+```
+
+```{r}
+summary(mec_temp[mec_temp$agreement == '001',]$total_contig)
+```
+
+```{r}
+colnames(metrics)
+```
 
 ```{r}
 mec <- merge(mec, data.frame(
@@ -413,7 +439,7 @@ top_st
 #### MRSA/MSSA Distribution For Top 10 Sequence Types
 Now we are ready to plot out the distribution of MRSA and MSSA predictions by sequence type.
 
-```{r Figure 6 MRSA TopST, fig.width=12, fig.asp=0.4}
+```{r fig.width=12, fig.asp=0.4}
 top_st_meca <- merge(top_st, meca_by_st, by='st')
 p <- ggplot(data=top_st_meca, aes(x=reorder(st, -count), y=freq,
                                   fill = status)) +
@@ -428,9 +454,28 @@ p <- ggplot(data=top_st_meca, aes(x=reorder(st, -count), y=freq,
           axis.title=element_text(size=14,face="bold"),
           legend.title = element_blank())
 p
+```
 
-# Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-06-mrsa-top-10-sequence-types'))
+#### MRSA/MSSA Distribution For Top 10 Sequence Types
+Now we are ready to plot out the distribution of MRSA and MSSA predictions by sequence type.
+
+```{r fig.width=8, fig.asp=0.4}
+top_st_meca <- merge(top_st, meca_by_st, by='st')
+counts <- top_st_meca[top_st_meca$status == 'MRSA',]
+counts$label <- paste0(counts$freq, ", ", counts$count - counts$freq)
+counts <- counts[,c('st', 'count', 'label')]
+p <- ggplot(data=top_st_meca, aes(x=reorder(st, -count), y=freq,
+                                  fill = status, label=freq)) +
+    xlab("Sequence Type") +
+    ylab("Count") +
+    geom_bar(stat="identity", position = "stack") +
+    geom_text(size=3, aes(as.character(st), count + 200, label = label, fill = NULL), data = counts) +
+    scale_fill_manual(values=c("#2ca25f", "#5ab4ac")) +
+    theme_bw() +
+    theme(axis.text=element_text(size=12),
+          axis.title=element_text(size=14,face="bold"),
+          legend.title = element_blank())
+p
 ```
 
 ### Resistance Patterns Based on Ariba and MegaRes
@@ -511,15 +556,14 @@ plot_by_st <- function(group, top_st, column) {
                                             y=freq, fill = status)) +
         xlab("Sequence Type") +
         ylab(paste0("Count")) +
-        geom_bar(stat="identity", position = "dodge") +
-        geom_text(aes(label=freq), vjust = -0.5,
-                  position = position_dodge(.9)) + 
+        geom_bar(stat="identity", position = "stack") +
         scale_fill_manual(values=c("#2ca25f", "#5ab4ac"),
                           name = column) +
         theme_bw() +
         theme(axis.text=element_text(size=12),
-              axis.title=element_text(size=14,face="bold"),
-              legend.position="top")
+              axis.title=element_text(size=14, face="bold"),
+              legend.position="top",
+              legend.title=element_blank())
     return(p)
 }
 ```
@@ -527,39 +571,81 @@ plot_by_st <- function(group, top_st, column) {
 #### Resistance Classes With A Match By Top 10 Sequence Types
 ```{r fig.width=12, fig.asp=0.4}
 top_st <- get_top_sequence_types()
-plots <- list()
-i <- 1
 for (column in sort(as.character(
         resistance_report_counts[resistance_report_counts$total > 0,]$class
     ))) {
     p <- plot_by_st(resistance_groups, top_st, column)
     print(column)
     print(p)
-    if (column == 'Fosfomycin' | column == 'Aminoglycosides' | column == 'MLS') {
-        plots[[i]] <- p
-        i <- i + 1
-    } 
 }
 ```
 
-```{r figure 7, fig.width=12, fig.asp=1.5}
-grid.arrange(grobs=plots)
+```{r figure 5, fig.width=12, fig.asp=0.8}
+grid_arrange_shared <- function(..., ncol = length(list(...)), nrow = 1, position = c("bottom", "right")) {
+  plots <- list(...)
+  position <- match.arg(position)
+  g <- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
+  lheight <- sum(legend$height)
+  lwidth <- sum(legend$width)
+  gl <- lapply(plots, function(x) x + theme(legend.position="none"))
+  gl[[1]] <-arrangeGrob(gl[[1]], top = textGrob(
+        "A", x = unit(0, "npc"), y = unit(1, "npc"), just=c("left","top"),
+         gp=gpar(col="black", fontsize=18, fontface="bold"))
+    )
+  gl[[2]] <-arrangeGrob(gl[[2]], top = textGrob(
+        "B", x = unit(0, "npc"), y = unit(1, "npc"), just=c("left","top"),
+         gp=gpar(col="black", fontsize=18, fontface="bold"))
+    )
+  gl[[3]] <-arrangeGrob(gl[[3]], top = textGrob(
+        "C", x = unit(0, "npc"), y = unit(1, "npc"), just=c("left","top"),
+         gp=gpar(col="black", fontsize=18, fontface="bold"))
+    )
+  gl[[4]] <-arrangeGrob(gl[[4]], top = textGrob(
+        "D", x = unit(0, "npc"), y = unit(1, "npc"), just=c("left","top"),
+         gp=gpar(col="black", fontsize=18, fontface="bold"))
+    )
+      
+  gl <- c(gl, ncol = ncol, nrow = nrow)
+
+  combined <- switch(position,
+                     "bottom" = arrangeGrob(do.call(arrangeGrob, gl),
+                                            legend,
+                                            ncol = 1,
+                                            heights = unit.c(unit(1, "npc") - lheight, lheight)),
+                     "right" = arrangeGrob(do.call(arrangeGrob, gl),
+                                           legend,
+                                           ncol = 2,
+                                           widths = unit.c(unit(1, "npc") - lwidth, lwidth)))
+
+  grid.newpage()
+  grid.draw(combined)
+
+  # return gtable invisibly
+  invisible(combined)
+}
+
+top_st <- get_top_sequence_types()
+p1 <- plot_by_st(resistance_groups, top_st, 'Betalactams (mec)')
+p2 <- plot_by_st(resistance_groups, top_st, 'Aminoglycosides')
+p3 <- plot_by_st(resistance_groups, top_st, 'Fosfomycin')
+p4 <- plot_by_st(resistance_groups, top_st, 'MLS')
+grid_arrange_shared(p1,p2,p3,p4, nrow=2, ncol=2)
 # Output plot to PDF and PNG
 pdf(paste0(
     getwd(),
-    '/../figures/figure-07-resistance-facet-top-10-sequence-types.pdf'
-), height=15, width=12)
-grid.arrange(grobs=plots)
+    '/../figures/figure-04-resistance-facet-top-10-sequence-types.pdf'
+), height=6, width=12)
+grid_arrange_shared(p1,p2,p3,p4, nrow=2, ncol=2)
 dev_null <- dev.off()
 
 png(paste0(
     getwd(),
-    '/../figures/figure-07-resistance-facet-top-10-sequence-types.png'
-), height=1200, width=1200)
-grid.arrange(grobs=plots)
+    '/../figures/figure-04-resistance-facet-top-10-sequence-types.png'
+), height=600, width=1200)
+grid_arrange_shared(p1,p2,p3,p4, nrow=2, ncol=2)
 dev_null <- dev.off()
 ```
-
 
 ## Session Info
 ```{r}

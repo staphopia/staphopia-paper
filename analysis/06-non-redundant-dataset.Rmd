@@ -82,7 +82,7 @@ p <- ggplot(data=variant_counts, aes(x=seq(1,nrow(variant_counts)), y=snp_count,
 p
 
 # Output plot to PDF and PNG
-staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-09-snp-accumulation'))
+staphopia::write_plot(p, paste0(getwd(), '/../figures/figure-05-snp-accumulation'))
 ```
 
 ```{r fig.width=12, fig.asp=0.4}
